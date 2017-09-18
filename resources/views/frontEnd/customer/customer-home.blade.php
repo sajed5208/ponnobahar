@@ -13,9 +13,6 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="panel panel-default text-center" style="border: 1px solid deeppink;">
-                                <div class="panel-heading panel-title" style="background-color: deeppink; color: white;">
-
-                                </div>
                                 <div class="panel-body list-group">
                                     <a class="list-group-item" href="{{url('customer-home')}}">My Home</a>
                                     <a class="list-group-item" href="{{url('customer-order')}}">My Order</a>

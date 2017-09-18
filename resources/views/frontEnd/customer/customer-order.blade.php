@@ -11,7 +11,6 @@
                     <div class="row">
                         <table>
                             <tr>
-                                <th>Sl No</th>
                                 <th>Order No</th>
                                 <th>Order Total</th>
                                 <th>Order Status</th>
@@ -19,58 +18,20 @@
                                 <th>Payment Status</th>
                                 <th>Action</th>
                             </tr>
+                            @foreach($orders as $order)
                             <tr>
-                                <td>01</td>
-                                <td>01</td>
-                                <td>1</td>
-                                <td>Zins</td>
-                                <td>bKash</td>
-                                <td>2000</td>
+                                <td>{{$order->id}}</td>
+                                <td>{{$order->order_total}}</td>
+                                <td>{{$order->order_status}}</td>
+                                <td>{{$order->payment_type }}</td>
+                                <td>{{$order-> 	payment_status }}</td>
                                 <td class="text-center">
                                     <a href="{{url('customer-order-view')}}" class=" btn btn-primary btn-xs" style="background-color: deeppink;">
                                         <span class="fa fa-eye" title="View"></span>
                                     </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>01</td>
-                                <td>01</td>
-                                <td>1</td>
-                                <td>Zins</td>
-                                <td>bKash</td>
-                                <td>2000</td>
-                                <td class="text-center">
-                                    <a href="{{url('customer-order-view')}}" class=" btn btn-primary btn-xs" style="background-color: deeppink;">
-                                        <span class="fa fa-eye" title="View"></span>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>01</td>
-                                <td>01</td>
-                                <td>1</td>
-                                <td>Zins</td>
-                                <td>bKash</td>
-                                <td>2000</td>
-                                <td class="text-center">
-                                    <a href="{{url('customer-order-view')}}" class=" btn btn-primary btn-xs" style="background-color: deeppink;">
-                                        <span class="fa fa-eye" title="View"></span>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>01</td>
-                                <td>01</td>
-                                <td>1</td>
-                                <td>Zins</td>
-                                <td>bKash</td>
-                                <td>2000</td>
-                                <td class="text-center">
-                                    <a href="{{url('customer-order-view')}}" class=" btn btn-primary btn-xs" style="background-color: deeppink;">
-                                        <span class="fa fa-eye" title="View"></span>
-                                    </a>
-                                </td>
-                            </tr>
+                            @endforeach
                         </table>
                     </div>
                 </div>
@@ -78,9 +39,6 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="panel panel-default text-center" style="border: 1px solid deeppink;">
-                                <div class="panel-heading panel-title" style="background-color: deeppink; color: white;">
-
-                                </div>
                                 <div class="panel-body list-group">
                                     <a class="list-group-item" href="{{url('customer-home')}}">My Home</a>
                                     <a class="list-group-item" href="{{url('customer-order')}}">My Order</a>

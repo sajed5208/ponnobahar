@@ -76,6 +76,7 @@ Route::get('/customer-order', 'CustomerController@customerOrder');
 Route::get('/customer-wishlist', 'CustomerController@customerWishlist');
 Route::get('/customer-profiles', 'CustomerController@customerProfile');
 Route::get('/customer-order-view', 'CustomerController@customerOrderView');
+
 /* Customer Register */
 
 /*Admin User*/
@@ -141,3 +142,12 @@ Route::get('/select-sub-category/{id}', 'ProductController@selectSubCategoryByCa
 Route::post('/new-product','ProductController@saveProductInfo');
 Route::get('/manage-product','ProductController@manageProduct');
 Route::get('/view-product/{id}','ProductController@viewProductInfo');
+
+
+/*about Module*/
+Route::get('/add-about', 'AboutController@addAbout');
+Route::post('/new-about', 'AboutController@saveAbout');
+Route::get('/manage-about', 'AboutController@manageAbout');
+Route::get('/edit-about/{id}', 'AboutController@editAbout');
+Route::post('/update-about', 'AboutController@updateAbout');
+Route::get('/delete-about/{id}', 'AboutController@deleteAbout');

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use Illuminate\Http\Request;
+use App\Order;
+use Session;
+use App\Payment;
+use DB;
 
 class CustomerController extends Controller
 {
@@ -21,7 +25,13 @@ class CustomerController extends Controller
         return view('frontEnd.customer.customer-home');
     }
     public function customerOrder(){
-        return view('frontEnd.customer.customer-order');
+        $customerId=Session::get('customerId');
+        $orders=DB::table('orders')
+            ->join('payments','orders.customer_id','=','payments.id')
+            ->select('orders.id','orders.order_total','orders.order_status','payments.payment_type','payments.payment_status')
+            ->where('orders.customer_id',$customerId)
+            ->get();
+        return view('frontEnd.customer.customer-order',['orders'=>$orders]);
     }
     public function customerWishlist(){
         return view('frontEnd.customer.customer-wishlist');
@@ -32,5 +42,6 @@ class CustomerController extends Controller
     public function customerOrderView(){
         return view('frontEnd.customer.customer-order-view');
     }
+
 
 }

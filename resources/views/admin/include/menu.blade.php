@@ -93,6 +93,16 @@
                 </ul>
             </li>
             <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-files-o"></i>
+                    <span>About Module</span><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{url('/add-about')}}"><i class="fa fa-edit"></i>Add About</a></li>
+                    <li><a href="{{url('/manage-about')}}"><i class="fa fa-edit"></i>Manage About</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
                 <a href="{{url('/manage-order')}}"><i class="fa fa-files-o"></i> <span>Order Module</span></a>
             </li>
             <li class="treeview">

@@ -50,7 +50,7 @@
                         </div><!-- /.box-body -->
                         <div class="box-footer">
                             <button type="reset" class="btn btn-default">Reset</button>
-                            <button type="button" class="btn btn-info pull-right">Create Category Info</button>
+                            <button type="submit" class="btn btn-info pull-right">Create Category Info</button>
                         </div><!-- /.box-footer -->
                     </form>
                 </div>
