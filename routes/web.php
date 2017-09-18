@@ -70,6 +70,14 @@ Route::get('/manage-customer', 'CustomerController@manageOrder');
 Route::get('/delete-customer/{id}', 'CustomerController@deleteOrder');
 /*Admin Customer Manager*/
 
+/* Customer Register */
+Route::get('/customer-home', 'CustomerController@customerHome');
+Route::get('/customer-order', 'CustomerController@customerOrder');
+Route::get('/customer-wishlist', 'CustomerController@customerWishlist');
+Route::get('/customer-profiles', 'CustomerController@customerProfile');
+Route::get('/customer-order-view', 'CustomerController@customerOrderView');
+/* Customer Register */
+
 /*Admin User*/
 Route::get('/add-user', 'UserController@AddUser');
 Route::post('/new-user', 'UserController@saveUserInfo');

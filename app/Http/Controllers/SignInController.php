@@ -28,7 +28,7 @@ class SignInController extends Controller
                 Session::put('customerId', $customerInfo->id);
                 Session::put('customerName', $customerInfo->first_name.' '.$customerInfo->last_name);
 
-                return redirect('/');
+                return redirect('customer-home');
             } else {
                 return redirect('/sign-in')->with('message', 'Please use valid email address & password');
             }
@@ -65,6 +65,6 @@ class SignInController extends Controller
         $customer->save();
         Session::put('customerId', $customer->id);
         Session::put('customerName', $request->first_name.' '.$request->last_name);
-        return redirect('/');
+        return redirect('customer-home');
     }
 }

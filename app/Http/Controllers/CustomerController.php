@@ -17,4 +17,20 @@ class CustomerController extends Controller
 
         return redirect('/manage-customer')->with('message', 'Customer info delete successfully');
     }
+    public function customerHome(){
+        return view('frontEnd.customer.customer-home');
+    }
+    public function customerOrder(){
+        return view('frontEnd.customer.customer-order');
+    }
+    public function customerWishlist(){
+        return view('frontEnd.customer.customer-wishlist');
+    }
+    public function customerProfile(){
+        return view('frontEnd.customer.customer-profile');
+    }
+    public function customerOrderView(){
+        return view('frontEnd.customer.customer-order-view');
+    }
+
 }
