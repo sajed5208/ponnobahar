@@ -45,7 +45,7 @@
                                     <td>{{$about->mission}}</td>
                                     <td>{{$about->vision}}</td>
                                     <td>{{$about->goal}}</td>
-                                    <td class="center">
+                                    <td class="text-center">
                                     <a href="{{url('/edit-about/'.$about->id)}}" class="btn btn-success btn-xs">
                                     <span class="glyphicon glyphicon-edit" title="Edit"></span>
                                     </a>

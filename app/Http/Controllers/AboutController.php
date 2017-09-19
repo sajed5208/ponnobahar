@@ -21,11 +21,11 @@ class AboutController extends Controller
             'goal'=>'required',
         ));
 
-        $aboutImage = $request->file('image');
-        $aboutImageName = $aboutImage->getClientOriginalName();
-        $uploadPath = 'about-image/';
-        $imageUrl1 = $uploadPath . $aboutImageName;
-        $aboutImage->move($uploadPath, $aboutImageName);
+         $aboutImage = $request->file('image');
+         $aboutImageName = $aboutImage->getClientOriginalName();
+         $uploadPath = 'about-image/';
+         $imageUrl1 = $uploadPath . $aboutImageName;
+         $aboutImage->move($uploadPath, $aboutImageName);
 
           $about=new About();
           $about->title=$request->title;
@@ -35,9 +35,6 @@ class AboutController extends Controller
           $about->goal=$request->goal;
           $about->save();
           return redirect('/add-about')->with('message','About Info Create Successful');
-
-
-
     }
 
 //    public function saveAbout(Request$request){
@@ -45,21 +42,23 @@ class AboutController extends Controller
 //            $Image=$request->file('image');
 //            $fileName=time().''.''.$Image->getClientOriginalName();
 //            Image::make($Image)->resize(300,300)->save(public_path('/about-image/image/'.$fileName));
-//
 //            $about=new About();
 //            $about->title=$request->title;
 //            $about->image=$fileName;
 //            $about->mission=$request->mission;
 //            $about->vision=$request->vision;
+//            $about=new About();
 //            $about->goal=$request->goal;
 //            $about->save();
-//            return redirect('/add-about')->with('message','About Info Create Successful');
 //        }
+//        return redirect('/add-about')->with('message','About Info Create Successful');
 //    }
+
     public function manageAbout(){
         $abouts=About::all();
         return view('admin.about.manage-about',['abouts'=>$abouts]);
     }
+
     public function editAbout($id){
         $aboutById=About::find($id);
         return view('admin.about.edit-about',['about'=>$aboutById]);
