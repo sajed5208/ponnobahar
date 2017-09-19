@@ -75,7 +75,7 @@ Route::get('/customer-home', 'CustomerController@customerHome');
 Route::get('/customer-order', 'CustomerController@customerOrder');
 Route::get('/customer-wishlist', 'CustomerController@customerWishlist');
 Route::get('/customer-profiles', 'CustomerController@customerProfile');
-Route::get('/customer-order-view', 'CustomerController@customerOrderView');
+Route::get('/customer-order-view/{id}', 'CustomerController@customerOrderView');
 
 /* Customer Register */
 

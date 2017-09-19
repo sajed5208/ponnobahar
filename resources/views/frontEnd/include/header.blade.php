@@ -7,7 +7,7 @@
                     <div>
                         <ul class="nav nav-tabs">
                             <?php if($customerId = Session::get('customerId')) { ?>
-                                <li><a style="cursor: default;"><i class="fa fa-user"></i> Hello {{ Session::get('customerName') }}</a></li>
+                                <li><a href="{{url('customer-home')}}" style="cursor: default;"><i class="fa fa-user"></i> Hello {{ Session::get('customerName') }}</a></li>
                                 <li><a href=""> | </a></li>
                                 <li><a href="{{ url('/customer-logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
                             <?php } else {  ?>

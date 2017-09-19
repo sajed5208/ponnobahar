@@ -24,9 +24,9 @@
                                 <td>{{$order->order_total}}</td>
                                 <td>{{$order->order_status}}</td>
                                 <td>{{$order->payment_type }}</td>
-                                <td>{{$order-> 	payment_status }}</td>
+                                <td>{{$order->payment_status }}</td>
                                 <td class="text-center">
-                                    <a href="{{url('customer-order-view')}}" class=" btn btn-primary btn-xs" style="background-color: deeppink;">
+                                    <a href="{{url('/customer-order-view/'.$order->id)}}" class=" btn btn-primary btn-xs" style="background-color: deeppink;">
                                         <span class="fa fa-eye" title="View"></span>
                                     </a>
                                 </td>

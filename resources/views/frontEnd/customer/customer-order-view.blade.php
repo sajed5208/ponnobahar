@@ -18,38 +18,18 @@
                                 <th>Product Quality</th>
                                 <th>Total Price</th>
                             </tr>
+                            @foreach($orderDetails as $orderDetail)
                             <tr>
-                                <td>01</td>
-                                <td>01</td>
-                                <td>1</td>
-                                <td>Zins</td>
-                                <td>bKash</td>
-                                <td>2000</td>
+                                <td>{{$orderDetail->id}}</td>
+                                <td>{{$orderDetail->product_code}}</td>
+                                <td>{{$orderDetail->product_name}}</td>
+                                <td>{{$orderDetail->product_price}}</td>
+                                <td>{{$orderDetail->product_quantity}}</td>
+                                <td>
+                                    {{$orderDetail->product_price * $orderDetail->product_quantity}}
+                                </td>
                             </tr>
-                            <tr>
-                                <td>01</td>
-                                <td>01</td>
-                                <td>1</td>
-                                <td>Zins</td>
-                                <td>bKash</td>
-                                <td>2000</td>
-                            </tr>
-                            <tr>
-                                <td>01</td>
-                                <td>01</td>
-                                <td>1</td>
-                                <td>Zins</td>
-                                <td>bKash</td>
-                                <td>2000</td>
-                            </tr>
-                            <tr>
-                                <td>01</td>
-                                <td>01</td>
-                                <td>1</td>
-                                <td>Zins</td>
-                                <td>bKash</td>
-                                <td>2000</td>
-                            </tr>
+                            @endforeach
                         </table>
                     </div>
                 </div>
