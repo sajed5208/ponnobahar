@@ -10,6 +10,7 @@
             <div class="row">
                 <div class="col-lg-9 col-md-9 col-sm-8 col-xs-8">
                     <div class="row">
+                        @foreach($customers as $customer)
                         <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11" style="border: 0px solid deeppink;">
                             <div class="img-responsive" style="float: left; ">
                                 <img src="{{ asset('/front/') }}/img/profile.jpg" alt="">
@@ -18,45 +19,34 @@
                                 <div class="panel-heading panel-title" style="background-color: deeppink; color: white; height: 40px;">
                                     <h4 style="margin-top: -2px;">Hello & Welcome</h4>
                                 </div>
-                                <h2 style="color: deeppink; margin-top: 5px;">Rakib</h2>
+                                <h2 style="color: deeppink; margin-top: 5px;">{{$customer->first_name.' '.$customer->last_name}}</h2>
                                 <hr>
                                 <table style="border: 0px solid;">
                                     <tr style="border: 0px hidden;">
                                         <td style="border: 0px hidden;"><strong>Phone</strong></td>
-                                        <td>01928837333</td>
+                                        <td>{{$customer->mobile_number}}</td>
                                     </tr>
                                     <tr style="border: hidden;">
                                         <td style="border: 0px hidden;"><strong>Email</strong></td>
-                                        <td>rakib@gmail.com</td>
+                                        <td>{{$customer->email_address}}</td>
                                     </tr>
                                     <tr style="border: 0px hidden;">
                                         <td style="border: 0px hidden;"><strong>Country</strong></td>
-                                        <td>Bangladesh</td>
+                                        <td>{{$customer->country_name}}</td>
                                     </tr>
                                     <tr style="border: 0px hidden;">
                                         <td style="border: 0px hidden;"><strong>Address</strong></td>
-                                        <td>Dhaka</td>
+                                        <td>{{$customer->address}}</td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
+                            @endforeach
                     </div>
 
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="panel panel-default text-center" style="border: 1px solid deeppink;">
-                                <div class="panel-body list-group">
-                                    <a class="list-group-item" href="{{url('customer-home')}}">My Home</a>
-                                    <a class="list-group-item" href="{{url('customer-order')}}">My Order</a>
-                                    <a class="list-group-item" href="{{url('customer-wishlist')}}">My Wishlist</a>
-                                    <a class="list-group-item" href="{{url('customer-profiles')}}">My Profile</a>
-                                    <a class="list-group-item" href="{{ url('/customer-logout') }}">Log Out</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @include('frontEnd.customer.customer-menu.menu')
                 </div>
             </div>
         </div>

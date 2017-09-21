@@ -36,19 +36,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="panel panel-default text-center" style="border: 1px solid deeppink;">
-                                <div class="panel-body list-group">
-                                    <a class="list-group-item" href="{{url('customer-home')}}">My Home</a>
-                                    <a class="list-group-item" href="{{url('customer-order')}}">My Order</a>
-                                    <a class="list-group-item" href="{{url('customer-wishlist')}}">My Wishlist</a>
-                                    <a class="list-group-item" href="{{url('customer-profiles')}}">My Profile</a>
-                                    <a class="list-group-item" href="{{ url('/customer-logout') }}">Log Out</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @include('frontEnd.customer.customer-menu.menu')
                 </div>
             </div>
         </div>

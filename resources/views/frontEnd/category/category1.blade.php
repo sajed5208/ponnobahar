@@ -99,7 +99,11 @@
                                 <a class="cat-display" style="color: deeppink; cursor: default">Sold Out</a>
                             </div>
                             <div class="col-sm-6 category-product-item text-right" style="">
+                                <?php if($customerId = Session::get('customerId')) { ?>
                                 <a href="{{url('/add-wishlist/'.$categoryProduct->id,$categoryProduct->category_id)}}" class="cat-display" style="color: deeppink;">Add To Wishlist</a>
+                                <?php } else { ?>
+                                    <a href="{{url('/no-login/'.$categoryProduct->category_id)}}" class="cat-display" style="color: deeppink;">Add To Wishlist</a>
+                                <?php }  ?>
                             </div>
 
                             <a href="{{ url('/product-details/'.$categoryProduct->id) }}"><img src="{{ asset($categoryProduct->product_image) }}" alt="" style="padding: 0px; margin-top: -10px; border-radius: 5px;" class="img-responsive cate-img"></a>

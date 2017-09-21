@@ -36,10 +36,21 @@ class CustomerController extends Controller
         return view('frontEnd.customer.customer-order',['orders'=>$orders]);
     }
     public function customerWishlist(){
-        return view('frontEnd.customer.customer-wishlist');
+        $customerId=Session::get('customerId');
+        $wishlists=DB::table('wishlists')
+                ->join('products','wishlists.product_id','products.id')
+                ->select('wishlists.id','products.product_name','products.product_image','products.product_price')
+                ->where('wishlists.customer_id',$customerId)
+                ->get();
+        return view('frontEnd.customer.customer-wishlist',['wishlists'=>$wishlists]);
     }
     public function customerProfile(){
-        return view('frontEnd.customer.customer-profile');
+        $customerId=Session::get('customerId');
+        $customers=DB::table('customers')
+                ->where('customers.id',$customerId)
+                ->get();
+//        return $customers;
+        return view('frontEnd.customer.customer-profile',['customers'=>$customers]);
     }
     public function customerOrderView($id){
         $orderDetails=DB::table('orders')

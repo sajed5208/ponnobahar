@@ -151,3 +151,9 @@ Route::get('/manage-about', 'AboutController@manageAbout');
 Route::get('/edit-about/{id}', 'AboutController@editAbout');
 Route::post('/update-about', 'AboutController@updateAbout');
 Route::get('/delete-about/{id}', 'AboutController@deleteAbout');
+
+/* wish list*/
+
+Route::get('/add-wishlist/{id}/{category_id}','WishlistController@addWishlist');
+
+/* wish list*/
