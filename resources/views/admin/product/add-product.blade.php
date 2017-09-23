@@ -99,19 +99,19 @@
                                     <div class="form-group">
                                         <label for="inputEmail3"  class="col-sm-3 control-label">Product Price</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="product_price" class="form-control" id="inputEmail3" placeholder="Product price">
+                                            <input type="text" name="product_price" class="form-control" id="price" placeholder="Product price">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="inputEmail3"  class="col-sm-3 control-label">Product Discount Amount</label>
                                         <div class="col-sm-9">
-                                            <input type="number" name="discount_product_amount" class="form-control" id="inputEmail3" placeholder="Product Discount Amount">
+                                            <input type="number" name="discount_product_amount" class="form-control" id="product_discount_amount" placeholder="Product Discount Amount">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="inputEmail3"  class="col-sm-3 control-label">Product Discount Price</label>
                                         <div class="col-sm-9">
-                                            <input type="number" name="discount_product_price" class="form-control" id="inputEmail3" placeholder="Product Discount Price">
+                                            <input type="number"  name="discount_product_price" class="form-control" id="product_discount_price" placeholder="Product Discount Price" onclick="discount_price()">
                                         </div>
                                     </div>
                                 </div>
@@ -247,6 +247,14 @@
             </div>
         </div>
     </section>
+    <script>
+        function discount_price() {
+            var price=document.getElementById('price').value;
+            var product_discount_amount=document.getElementById('product_discount_amount').value;
+            document.getElementById('product_discount_price').value=price-(price*product_discount_amount/100);
+
+        }
+    </script>
     <script>
         CKEDITOR.replace('editor1');
 
