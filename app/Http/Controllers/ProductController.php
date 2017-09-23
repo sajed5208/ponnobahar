@@ -35,6 +35,8 @@ class ProductController extends Controller
         $product->product_color = $request->product_color;
         $product->product_sku = $request->product_sku;
         $product->product_price = $request->product_price;
+        $product->discount_product_amount=$request->discount_product_amount;
+        $product->discount_product_price=$request->discount_product_price;
         $product->top_left_one = $request->top_left_one;
         $product->top_left_two = $request->top_left_two;
         $product->top_right_one = $request->top_right_one;

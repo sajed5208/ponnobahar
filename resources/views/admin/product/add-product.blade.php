@@ -102,6 +102,18 @@
                                             <input type="text" name="product_price" class="form-control" id="inputEmail3" placeholder="Product price">
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3"  class="col-sm-3 control-label">Product Discount Amount</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" name="discount_product_amount" class="form-control" id="inputEmail3" placeholder="Product Discount Amount">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3"  class="col-sm-3 control-label">Product Discount Price</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" name="discount_product_price" class="form-control" id="inputEmail3" placeholder="Product Discount Price">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group">

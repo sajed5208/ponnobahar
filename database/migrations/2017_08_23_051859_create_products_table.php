@@ -24,6 +24,8 @@ class CreateProductsTable extends Migration
             $table->string('product_color');
             $table->string('product_sku');
             $table->float('product_price', 10,2);
+            $table->string('discount_product_amount');
+            $table->string('discount_product_price');
             $table->tinyInteger('top_left_one');
             $table->tinyInteger('top_left_two');
             $table->tinyInteger('top_right_one');

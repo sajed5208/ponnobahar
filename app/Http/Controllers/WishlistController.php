@@ -12,7 +12,6 @@ use App\Wishlist;
 class WishlistController extends Controller
 {
 
-
     public function addWishlist($id,$category_id){
         $customerId=Session::get('customerId');
         if ($customerId){

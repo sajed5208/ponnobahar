@@ -16,7 +16,7 @@
                                 <img src="{{$customer->customer_image}}" alt="" height="100%" width="100%">
                             </div>
                             <div class="" style="float: left; padding: 20px">
-                                <a href="{{url('/edit-customer/'.$customer->id)}}"><input type="button" name="btn" value="Edit" style="margin-right:-57px; padding: 5px; font-size: 18px; float: right; background-color: deeppink; color: white;"></a>
+                                <a href="{{url('/edit-customer/'.$customer->id)}}"><input type="button" name="btn" value="Edit" style="padding: 5px; font-size: 18px; float: right; background-color: deeppink; color: white;"></a>
                                 <div class="panel-heading panel-title" style="background-color: deeppink; color: white; height: 40px;">
                                     <h4 style="margin-top: -2px;">Hello & Welcome</h4>
                             </div>

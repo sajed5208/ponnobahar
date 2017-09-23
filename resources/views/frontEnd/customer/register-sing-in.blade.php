@@ -140,7 +140,6 @@
                                 <form action="{{ url('/sign-in') }}" method="POST">
                                     {{ csrf_field() }}
                                     <h4 class="text-center text-danger">{{Session::get('message')}}</h4>
-                                    <hr/>
                                     <div class="form-group">
                                         <div class="input-group">
                                         <span class="input-group-addon" style="background-color: deeppink;">

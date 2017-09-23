@@ -21,10 +21,9 @@
                         </div>
                         <div class="panel-body" style="padding-bottom: 8px;">
                             <div class="well" style="padding-bottom: 0px; background-color: lightpink">
-                                <form action="{{ url('/sign-in') }}" method="POST">
+                                <form action="{{ url('/sign-in') }}" method="POST" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <h4 class="text-center text-danger">{{Session::get('message')}}</h4>
-                                    <hr/>
                                     <div class="form-group">
                                         <div class="input-group">
                                         <span class="input-group-addon" style="background-color: deeppink;">
@@ -130,6 +129,12 @@
                                         <label class="control-label col-md-4">Date Of Birth </label>
                                         <div class="col-md-8">
                                             <input  type="text" name="date_of_birth" placeholder="Click To Show & Insert Date"  id="example1" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">Customer Image</label>
+                                        <div class="col-md-8">
+                                            <input  type="file" name="customer_image" id="example1">
                                         </div>
                                     </div>
                                     <div class="form-group">
