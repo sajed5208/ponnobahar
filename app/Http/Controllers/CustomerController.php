@@ -39,7 +39,7 @@ class CustomerController extends Controller
         $customerId=Session::get('customerId');
         $wishlists=DB::table('wishlists')
                 ->join('products','wishlists.product_id','products.id')
-                ->select('wishlists.id','products.product_name','products.product_image','products.product_price')
+                ->select('wishlists.id','wishlists.customer_id','products.product_name','products.product_image','products.product_price')
                 ->where('wishlists.customer_id',$customerId)
                 ->get();
         return view('frontEnd.customer.customer-wishlist',['wishlists'=>$wishlists]);

@@ -21,7 +21,7 @@
                         </div>
                         <div class="panel-body" style="padding-bottom: 8px;">
                             <div class="well" style="padding-bottom: 0px; background-color: lightpink">
-                                <form action="{{ url('/registration') }}" method="POST" class="form-horizontal">
+                                <form action="{{ url('/registration') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <label class="control-label col-md-4">First Name  <span class="text-danger">*</span></label>
@@ -83,6 +83,12 @@
                                         <label class="control-label col-md-4">Date Of Birth </label>
                                         <div class="col-md-8">
                                             <input  type="text" name="date_of_birth" placeholder="Click To Show & Insert Date"  id="example1" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">Customer Image</label>
+                                        <div class="col-md-8">
+                                            <input  type="file" name="customer_image" id="example1">
                                         </div>
                                     </div>
                                     <div class="form-group">

@@ -50,6 +50,8 @@ Route::get('/sign-in', 'SignInController@index');
 Route::post('/sign-in', 'SignInController@customerLoginCheck');
 Route::get('/registration', 'SignInController@customerRegistration');
 Route::post('/registration', 'SignInController@newCustomer');
+Route::get('/edit-customer/{id}', 'SignInController@editCustomer');
+Route::post('/update-profile', 'SignInController@updateCustomer');
 /*customer login sign up profile*/
 
 
@@ -76,7 +78,6 @@ Route::get('/customer-order', 'CustomerController@customerOrder');
 Route::get('/customer-wishlist', 'CustomerController@customerWishlist');
 Route::get('/customer-profiles', 'CustomerController@customerProfile');
 Route::get('/customer-order-view/{id}', 'CustomerController@customerOrderView');
-
 /* Customer Register */
 
 /*Admin User*/

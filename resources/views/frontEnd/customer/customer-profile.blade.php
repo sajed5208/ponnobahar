@@ -12,15 +12,18 @@
                     <div class="row">
                         @foreach($customers as $customer)
                         <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11" style="border: 0px solid deeppink;">
-                            <div class="img-responsive" style="float: left; ">
-                                <img src="{{ asset('/front/') }}/img/profile.jpg" alt="">
+                            <div class="img-responsive" style="float: left; height: 250px; width: 250px; ">
+                                <img src="{{$customer->customer_image}}" alt="" height="100%" width="100%">
                             </div>
                             <div class="" style="float: left; padding: 20px">
+                                <a href="{{url('/edit-customer/'.$customer->id)}}"><input type="button" name="btn" value="Edit" style="margin-right:-57px; padding: 5px; font-size: 18px; float: right; background-color: deeppink; color: white;"></a>
                                 <div class="panel-heading panel-title" style="background-color: deeppink; color: white; height: 40px;">
                                     <h4 style="margin-top: -2px;">Hello & Welcome</h4>
+                            </div>
+                                <div class="row">
+                                    <h2 style="color: deeppink; margin-top: 5px; margin-left: 13px;">{{$customer->first_name.' '.$customer->last_name}}</h2>
+                                    <hr>
                                 </div>
-                                <h2 style="color: deeppink; margin-top: 5px;">{{$customer->first_name.' '.$customer->last_name}}</h2>
-                                <hr>
                                 <table style="border: 0px solid;">
                                     <tr style="border: 0px hidden;">
                                         <td style="border: 0px hidden;"><strong>Phone</strong></td>
