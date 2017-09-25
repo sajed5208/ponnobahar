@@ -31,7 +31,7 @@ class ProductController extends Controller
         $product->brand_id = $request->brand_id;
         $product->product_name = $request->product_name;
         $product->product_code = $request->product_code;
-        $product->product_size = $request->product_size;
+        $product->product_size_weight = $request->product_size_weight;
         $product->product_color = $request->product_color;
         $product->product_sku = $request->product_sku;
         $product->product_price = $request->product_price;

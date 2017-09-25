@@ -41,20 +41,34 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Publication Status</label>
                                 <div class="col-sm-10">
-                                    <select name="publication_status" class="form-control">
+                                    <select name="publication_status" id="selection" class="form-control">
+                                        <option value="Select Option">Select Option</option>
                                         <option value="1">Published</option>
                                         <option value="0">Unpublished</option>
                                     </select>
+                                    <p style="color: deeppink" id="message"></p>
                                 </div>
                             </div>
                         </div><!-- /.box-body -->
                         <div class="box-footer">
                             <button type="reset" class="btn btn-default">Reset</button>
-                            <button type="submit" class="btn btn-info pull-right">Create Category Info</button>
+                            <button type="submit" class="btn btn-info pull-right" onclick="return validate();">Create Category Info</button>
                         </div><!-- /.box-footer -->
                     </form>
                 </div>
             </div><!--/.col (right) -->
         </div>   <!-- /.row -->
     </section>
+    <script>
+        function validate() {
+            var select = document.getElementById('selection').value;
+            var message = document.getElementById('message')
+            if (select=="Select Option"){
+                message.innerHTML='Please select Publication Status ';
+                return false;
+            }else {
+                return true;
+            }
+        }
+    </script>
 @endsection

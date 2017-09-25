@@ -62,18 +62,9 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-4 control-label">Product Size</label>
+                                        <label for="inputEmail3" class="col-sm-4 control-label">Product Size/Weight</label>
                                         <div class="col-sm-8">
-                                            <select name="product_size" class="form-control">
-                                                <option value="Small">Small</option>
-                                                <option value="Medium">Medium</option>
-                                                <option value="Large">Large</option>
-                                                <option value="XL">XL</option>
-                                                <option value="XXL">XXL</option>
-                                                <option value="40">40</option>
-                                                <option value="42">42</option>
-                                                <option value="45">45</option>
-                                            </select>
+                                            <input type="text" name="product_size_weight" class="form-control" id="inputEmail3" placeholder="Product Size or Weight">
                                         </div>
                                     </div>
                                 </div>
@@ -105,13 +96,13 @@
                                     <div class="form-group">
                                         <label for="inputEmail3"  class="col-sm-3 control-label">Product Discount Amount</label>
                                         <div class="col-sm-9">
-                                            <input type="number" name="discount_product_amount" class="form-control" id="product_discount_amount" placeholder="Product Discount Amount">
+                                            <input type="number" value="0" name="discount_product_amount" class="form-control" id="product_discount_amount" placeholder="Product Discount Amount">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="inputEmail3"  class="col-sm-3 control-label">Product Discount Price</label>
                                         <div class="col-sm-9">
-                                            <input type="number"  name="discount_product_price" class="form-control" id="product_discount_price" placeholder="Product Discount Price" onclick="discount_price()">
+                                            <input type="number"  name="discount_product_price" class="form-control" id="product_discount_price" placeholder="Product Discount Price" onkeyup="discount_price(alert('ss'))">
                                         </div>
                                     </div>
                                 </div>
@@ -119,7 +110,8 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Product Color</label>
                                 <div class="col-sm-10">
-                                    <select name="product_color" class="form-control">
+                                    <select name="product_color" class="form-control" id="checked">
+                                        <option value="Select Option">Select Option</option>
                                         <option value="Black">Black</option>
                                         <option value="White">White</option>
                                         <option value="Orange">Orange</option>
@@ -132,6 +124,7 @@
                                         <option value="Red">Red</option>
                                         <option value="Green">Green</option>
                                     </select>
+
                                 </div>
                             </div>
                             <div class="row">
@@ -231,15 +224,17 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Publication Status</label>
                                 <div class="col-sm-10">
-                                    <select name="publication_status" class="form-control">
+                                    <select name="publication_status" id="selection" class="form-control">
+                                        <option value="Select Option">Select Option</option>
                                         <option value="1">Published</option>
                                         <option value="0">Unpublished</option>
                                     </select>
+                                    <p style="color: deeppink" id="message"></p>
                                 </div>
                             </div>
                             <div class="box-footer">
                                 <button type="reset" class="btn btn-default">Reset</button>
-                                <button type="submit" name="btn" class="btn btn-info pull-right">Create Product Info</button>
+                                <button type="submit" name="btn" class="btn btn-info pull-right" onclick="validate();">Create Product Info</button>
                             </div><!-- /.box-footer -->
                        </div>
                     </form>
@@ -248,11 +243,24 @@
         </div>
     </section>
     <script>
+        function validate() {
+            var check =document.getElementById('checked').value;
+            var select = document.getElementById('selection').value;
+            var message = document.getElementById('message');
+            if (select=="Select Option" &&check=="Select Option"){
+                message.innerHTML ='Please select Publication Status ';
+                return false;
+            }else {
+                return true;
+            }
+
+        }
+    </script>
+    <script>
         function discount_price() {
             var price=document.getElementById('price').value;
             var product_discount_amount=document.getElementById('product_discount_amount').value;
             document.getElementById('product_discount_price').value=price-(price*product_discount_amount/100);
-
         }
     </script>
     <script>

@@ -108,34 +108,76 @@
 </footer>
 <!--footer-->
 <!--small footer-->
-<section style="background-color: white;">
+<section style="background-color: #f6f6f6;">
     <div class="container">
-        <div class="row">
-            <div class="panel-body" style="padding-top: 20px; padding-bottom: 0px;">
-                <div class="copyright">
-                    <div class="col-md-12 col-md-offset-0">
-                        <div class="left">
-                            <div class=" text-center fa fa-facebook-square" style="font-size: 36px; color: #3b5998; margin-top:29px; float: left; padding: 10px;"></div>
-                            <div class=" text-center fa fa-twitter-square" style="font-size: 36px; color: #0089bd; margin-top:29px; float: left; padding: 10px;"></div>
-                            <div class=" text-center fa fa-google-plus" style="font-size: 34px; color: red; margin-top:32px; float: left; padding: 10px;"></div>
-                            <div class=" text-center fa fa-linkedin" style="font-size: 36px; color: #0089bd; margin-top:29px; float: left; padding: 10px;"></div>
-                        </div>
-                        <div class="right" style="">
-                            <div class=" text-center" style=" font-size: 36px;  margin-top:10px; float: right; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/CashDelivery.png" alt="img-footer" style="height: 100%; width: 100%;"></div>
-                            <div class=" text-center" style="font-size: 36px; margin-top:10px; float: right; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/bkash.png" alt="img-footer" style="height: 100%; width: 100%;"></div>
-                            <div class=" text-center" style="font-size: 36px; margin-top:10px; float: right; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/Visa-icon.png" alt="img-footer" style="height: 100%; width: 100%;"></div>
-                            <div class=" text-center" style="font-size: 36px; margin-top:10px; float: right; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/roket.jpg" alt="img-footer" style="height: 100%; width: 100%;"></div>
-                            <div class=" text-center" style="font-size: 36px; margin-top:10px; float: right; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/mastercard.png" alt="img-footer" style="height: 100%; width: 100%;"></div>
-                            <div class=" text-center" style="font-size: 36px; margin-top:10px; float: right; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/american.png" alt="img-footer" style="height: 100%; width: 100%;"></div>
-                            <div class=" text-center" style="font-size: 36px; margin-top:10px; float: right; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/payza.png" alt="img-footer" style="height: 100%;width: 100%;"></div>
-                            <div class=" text-center col-md-3"style=" float: right; margin-right: 50px;   "><img src="{{ asset('/front/') }}/img/footer.png" alt="img-footer" style="height: 75px;"></div>
-                        </div>
+        <div class="wpb_column col-sm-5 col-md-3" style="padding-bottom: 0px;">
+            <div class="wpb_wrapper">
+                <div class="vc_wp_custommenu wpb_content_element">
+                    <div class="widget widget_nav_menu" style="margin-left: -21px;">
+                        <div class=" text-center fa fa-facebook-square" style="font-size: 36px; color: #3b5998; float: left; padding: 9px;"></div>
+                        <div class=" text-center fa fa-twitter-square" style="font-size: 36px; color: #0089bd; float: left; padding: 9px;"></div>
+                        <div class=" text-center fa fa-google-plus" style="font-size: 34px; color: red; float: left; padding: 9px;"></div>
+                        <div class=" text-center fa fa-linkedin" style="font-size: 36px; color: #0089bd; float: left; padding: 9px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wpb_column col-sm-4 col-md-2 col-md-offset-2" style="padding-bottom: 0px; padding-top: 20px;">
+            <div class="wpb_wrapper">
+                <div class="vc_wp_custommenu wpb_content_element">
+                    <div class="widget widget_nav_menu">
+                        <img src="{{ asset('/front/') }}/img/footer.png" alt="img-footer" style="height: 75px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wpb_column col-sm-6 col-md-4 col-md-offset-1 " style="padding-bottom: 0px;">
+            <div class="wpb_wrapper">
+                <div class="vc_wp_custommenu wpb_content_element">
+                    <div class="widget widget_nav_menu">
+                        <div class=" text-center" style="font-size: 36px; float: left; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/CashDelivery.png" alt="img-footer" style="height: 100%; width: 100%;"></div>
+                        <div class=" text-center" style="font-size: 36px; float: left; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/bkash.png" alt="img-footer" style="height: 100%; width: 100%;"></div>
+                        <div class=" text-center" style="font-size: 36px; float: left; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/Visa-icon.png" alt="img-footer" style="height: 100%; width: 100%;"></div>
+                        <div class=" text-center" style="font-size: 36px; float: left; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/roket.jpg" alt="img-footer" style="height: 100%; width: 100%;"></div>
+                        <div class=" text-center" style="font-size: 36px; float: left; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/mastercard.png" alt="img-footer" style="height: 100%; width: 100%;"></div>
+                        <div class=" text-center" style="font-size: 36px; float: left; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/american.png" alt="img-footer" style="height: 100%; width: 100%;"></div>
+                        <div class=" text-center" style="font-size: 36px; float: left; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/payza.png" alt="img-footer" style="height: 100%;width: 100%;"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+{{--<section style="background-color: white;">--}}
+    {{--<div class="container">--}}
+        {{--<div class="row">--}}
+            {{--<div class="panel-body" style="padding-top: 20px; padding-bottom: 0px;">--}}
+                {{--<div class="copyright">--}}
+                    {{--<div class="col-md-12 col-md-offset-0">--}}
+                        {{--<div class="left">--}}
+                            {{--<div class=" text-center fa fa-facebook-square" style="font-size: 36px; color: #3b5998; margin-top:29px; float: left; padding: 10px;"></div>--}}
+                            {{--<div class=" text-center fa fa-twitter-square" style="font-size: 36px; color: #0089bd; margin-top:29px; float: left; padding: 10px;"></div>--}}
+                            {{--<div class=" text-center fa fa-google-plus" style="font-size: 34px; color: red; margin-top:32px; float: left; padding: 10px;"></div>--}}
+                            {{--<div class=" text-center fa fa-linkedin" style="font-size: 36px; color: #0089bd; margin-top:29px; float: left; padding: 10px;"></div>--}}
+                        {{--</div>--}}
+                        {{--<div class="right" style="">--}}
+                            {{--<div class=" text-center" style=" font-size: 36px;  margin-top:10px; float: right; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/CashDelivery.png" alt="img-footer" style="height: 100%; width: 100%;"></div>--}}
+                            {{--<div class=" text-center" style="font-size: 36px; margin-top:10px; float: right; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/bkash.png" alt="img-footer" style="height: 100%; width: 100%;"></div>--}}
+                            {{--<div class=" text-center" style="font-size: 36px; margin-top:10px; float: right; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/Visa-icon.png" alt="img-footer" style="height: 100%; width: 100%;"></div>--}}
+                            {{--<div class=" text-center" style="font-size: 36px; margin-top:10px; float: right; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/roket.jpg" alt="img-footer" style="height: 100%; width: 100%;"></div>--}}
+                            {{--<div class=" text-center" style="font-size: 36px; margin-top:10px; float: right; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/mastercard.png" alt="img-footer" style="height: 100%; width: 100%;"></div>--}}
+                            {{--<div class=" text-center" style="font-size: 36px; margin-top:10px; float: right; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/american.png" alt="img-footer" style="height: 100%; width: 100%;"></div>--}}
+                            {{--<div class=" text-center" style="font-size: 36px; margin-top:10px; float: right; padding: 8px; height: 50px; width: 50px;"><img src="{{ asset('/front/') }}/img/payza.png" alt="img-footer" style="height: 100%;width: 100%;"></div>--}}
+                            {{--<div class=" text-center col-md-3"style=" float: right; margin-right: 50px;   "><img src="{{ asset('/front/') }}/img/footer.png" alt="img-footer" style="height: 75px;"></div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</section>--}}
 <section id="wpo-copyright" class="wpo-copyright" style="padding-bottom: 1px;">
     <div class="container" >
         <div class="copyright" style="padding-top: 3px;">

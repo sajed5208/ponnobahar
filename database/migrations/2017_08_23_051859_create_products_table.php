@@ -20,12 +20,12 @@ class CreateProductsTable extends Migration
             $table->integer('brand_id');
             $table->string('product_name');
             $table->string('product_code');
-            $table->string('product_size');
+            $table->string('product_size_weight');
             $table->string('product_color');
             $table->string('product_sku');
             $table->float('product_price', 10,2);
-            $table->string('discount_product_amount');
-            $table->string('discount_product_price');
+            $table->integer('discount_product_amount');
+            $table->float('discount_product_price' ,10,2);
             $table->tinyInteger('top_left_one');
             $table->tinyInteger('top_left_two');
             $table->tinyInteger('top_right_one');

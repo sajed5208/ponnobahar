@@ -132,7 +132,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-4">Customer Image</label>
+                                        <label class="control-label col-md-4">Image</label>
                                         <div class="col-md-8">
                                             <input  type="file" name="customer_image" id="example1">
                                         </div>

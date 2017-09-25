@@ -11,6 +11,13 @@ class UserController extends Controller
         return view('/admin.user.add-user');
     }
     public function saveUserInfo(Request$request){
+        $this->validate($request,array(
+            'name'=>'name',
+            'email'=>'email',
+            'password'=>'password',
+            'phone_number'=>'phone_number',
+            'address'=>'address',
+        ));
       $user= new User();
       $user->name=$request->name;
       $user->email=$request->email;
