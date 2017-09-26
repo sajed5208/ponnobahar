@@ -75,6 +75,7 @@
         </div>
     </div>
 </section>
+
 <section class="pro-carousel" style="background-color: white;">
     <div class="container">
         <div class="row">
@@ -85,18 +86,25 @@
             </div>
         </div>
         <div class="row">
-            <div>
-                <div class="owl-carousel owl-theme">
+            <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1140px;height:200px;overflow:hidden;visibility:hidden;">
+                <!-- Loading Screen -->
+                <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;background-color:rgba(0,0,0,0.7);">
+                    <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+                </div>
+                <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1140px;height:200px;overflow:hidden;">
                     @foreach($carouselSliderProducts as $carouselSliderProduct)
                     <div class="item">
-                        <img src="{{ asset($carouselSliderProduct->product_image) }}" alt="" style="height: 240px; border-radius: 5px;">
+                        <img data-u="image" src="{{ asset($carouselSliderProduct->product_image) }}" />
                     </div>
                     @endforeach
+                    <a data-u="any" href="https://www.jssor.com" style="display:none">image gallery</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
 <section style="padding: 20px; background-color: white;">
     <div class="container" style="padding: 0px;">
         <div class="row">
@@ -132,5 +140,48 @@
         <br/>
     </div>
 </section>
+<script type="text/javascript">jssor_1_slider_init();</script>
+<script type="text/javascript">
+    jssor_1_slider_init = function() {
+
+        var jssor_1_options = {
+            $AutoPlay: 1,
+            $Idle: 0,
+            $SlideDuration: 5000,
+            $SlideEasing: $Jease$.$Linear,
+            $PauseOnHover: 6,
+            $SlideWidth: 170,
+            $Cols: 7
+        };
+
+        var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+        /*#region responsive code begin*/
+
+        var MAX_WIDTH = 1140;
+
+        function ScaleSlider() {
+            var containerElement = jssor_1_slider.$Elmt.parentNode;
+            var containerWidth = containerElement.clientWidth;
+
+            if (containerWidth) {
+
+                var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                jssor_1_slider.$ScaleWidth(expectedWidth);
+            }
+            else {
+                window.setTimeout(ScaleSlider, 30);
+            }
+        }
+
+        ScaleSlider();
+
+        $Jssor$.$AddEvent(window, "load", ScaleSlider);
+        $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+        $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+        /*#endregion responsive code end*/
+    };
+</script>
 
 @endsection

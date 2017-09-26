@@ -102,7 +102,7 @@
                                     <div class="form-group">
                                         <label for="inputEmail3"  class="col-sm-3 control-label">Product Discount Price</label>
                                         <div class="col-sm-9">
-                                            <input type="number"  name="discount_product_price" class="form-control" id="product_discount_price" placeholder="Product Discount Price" onkeyup="discount_price(alert('ss'))">
+                                            <input type="number"  name="discount_product_price" class="form-control" id="product_discount_price" placeholder="Product Discount Price" onclick="discount_price(alert('ss'))">
                                         </div>
                                     </div>
                                 </div>

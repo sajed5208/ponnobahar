@@ -25,6 +25,8 @@
                         <h4><span style="color: deeppink;">Product Code: </span>{{ $productById->product_code }}</h4>
                         <h4><span style="color: deeppink;">Product Name: </span>{{ $productById->product_name }}</h4>
                         <h4><span style="color: deeppink;">Product Price: </span>TK. {{ $productById->product_price }}</h4>
+                        <h4><span style="color: deeppink;">Product Discount Amount: </span>{{ $productById->discount_product_amount }}% off</h4>
+                        <h4><span style="color: deeppink;">Product Discount Price: </span>TK. {{ $productById->discount_product_price }}</h4>
                         <h4 style="color: deeppink;">Product Description : </h4>
                         <p class="text-justify">
                             {{ $productById->product_short_description }}
@@ -34,8 +36,8 @@
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label>Qantity: </label>
-                                    <input type="number" class="form-control" name="product_quantity" min="1" max="200" value="1">
-                                    <input type="hidden" class="form-control" name="product_id" value="{{ $productById->id }}">
+                                    <input type="number" class="form-control" required name="product_quantity" min="1" max="200" value="1">
+                                    <input type="hidden" class="form-control" required name="product_id" value="{{ $productById->id }}">
                                 </div>
                                 <button type="submit" style="background-color: deeppink" class="pull-right"><i class="fa fa-shopping-cart"></i> Add To Cart </button>
                                 <button type="submit" style="background-color: deeppink"> Order Now</button>

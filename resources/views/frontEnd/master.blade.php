@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('/front/') }}/css/jssor-slider.css"/>
     <link rel="stylesheet" href="{{ asset('/front/') }}/css/datepickers.css">
     <link rel="stylesheet" href="{{ asset('/front/') }}/css/etalage.css">
+
 </head>
 <body>
 <!--[if lt IE 8]>
@@ -42,6 +43,10 @@
 <script src="{{ asset('/front/') }}/js/jquery.etalage.min.js"></script>
 <script src="{{ asset('/front/') }}/js/main.js"></script>
 <script src="{{ asset('/front/') }}/js/bootstrap-dtepickers.js"></script>
+
+<script src="{{ asset('/minislider/') }}/js/jssor.slider-26.2.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">jssor_1_slider_init();</script>
+
 <script>
     $(document).ready(function () {
         $('#pcash').click(function () {

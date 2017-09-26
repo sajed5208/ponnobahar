@@ -75,10 +75,7 @@
                                 If your address inside of Dhaka city, we can deliver products within 2 business days (Saturday to Thursday). But if it outside of Dhaka city, it may take time for 2-4 business days. You will have to order us before 6 pm . But, if you order after 6 pm, it will be taken as next business day.
                             </p>
                             <ul style="padding-left: 13px;">
-
                             </ul>
-
-
                         </div>
                     </div>
                 </div>
