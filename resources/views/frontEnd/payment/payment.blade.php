@@ -132,10 +132,10 @@
                             <p style="padding-top: 0px;">TK. {{ $recentProduct->product_price }}</p>
                         </div>
                         <div class="col-sm-4 text-center" style="margin-top: 2px; padding: 0px;">
-                            <p style="padding-top: 0px; color: red;">20% Off</p>
+                            <p style="padding-top: 0px; color: red;">{{ $recentProduct->discount_product_amount }}% Off</p>
                         </div>
                         <div class="col-sm-4 text-center" style="margin-top: 2px;  padding: 0px;">
-                            <p style="padding-top: 0px;">TK. 2700</p>
+                            <p style="padding-top: 0px;">TK. {{ $recentProduct->discount_product_price }}</p>
                         </div>
                     </div>
                 @endforeach

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 use App\Category;
 use App\SubCategory;
@@ -135,5 +136,6 @@ class SliderController extends Controller
         $subCategoriesByCategoryId= SubCategory::where('category_id', $id)->get();
         echo view('admin.slider.sub-category-content', ['subCategoriesByCategoryId'=>$subCategoriesByCategoryId]);
     }
+
 
 }

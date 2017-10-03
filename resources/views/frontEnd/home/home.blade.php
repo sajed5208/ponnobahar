@@ -8,7 +8,9 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="slider-add">
-                            <a href=""><img src="{{ asset('/front/') }}/img/stil-image.jpg" alt="" style="height: 100%; width: 100%; border-radius: 5px;" /></a>
+                            @foreach($topLeftOnes->take(1) as $topLeftOne)
+                                    <a href=""><img src="{{ asset($topLeftOne->product_image) }}" alt="" style="height: 100%; width: 100%; border-radius: 5px;" /></a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -16,7 +18,9 @@
                 <div class="row" style="margin-top: -13px;">
                     <div class="col-sm-12">
                         <div class="slider-add">
-                            <a href=""><img src="{{ asset('/front/') }}/img/stil-image.jpg" alt="" style="height: 100%; width: 100%; border-radius: 5px;" /></a>
+                            @foreach($topLeftTwos->take(1) as $topLeftTwo)
+                                    <a href=""><img src="{{ asset($topLeftTwo->product_image) }}" alt="" style="height: 100%; width: 100%; border-radius: 5px;" /></a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -59,7 +63,9 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="slider-add">
-                            <a href=""><img src="{{ asset('/front/') }}/img/stil-image.jpg" alt="" style="height: 100%; width: 100%; border-radius: 5px;" /></a>
+                            @foreach($topRightOnes->take(1) as $topRightOne)
+                                     <a href=""><img src="{{ asset($topRightOne->product_image) }}" alt="" style="height: 100%; width: 100%; border-radius: 5px;" /></a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -67,7 +73,9 @@
                 <div class="row">
                     <div class="col-sm-12" style="margin-top: -13px;">
                         <div class="slider-add">
-                            <a href=""><img src="{{ asset('/front/') }}/img/stil-image.jpg" alt="" style="height: 100%; width: 100%; border-radius: 5px;" /></a>
+                            @foreach($topRightTwos->take(1) as $topRightTwo)
+                                     <a href=""><img src="{{ asset($topRightTwo->product_image) }}" alt="" style="height: 100%; width: 100%; border-radius: 5px;" /></a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -140,7 +148,7 @@
         <br/>
     </div>
 </section>
-<script type="text/javascript">jssor_1_slider_init();</script>
+
 <script type="text/javascript">
     jssor_1_slider_init = function() {
 
@@ -171,7 +179,7 @@
                 jssor_1_slider.$ScaleWidth(expectedWidth);
             }
             else {
-                window.setTimeout(ScaleSlider, 30);
+                window.setTimeout(ScaleSlider, 50);
             }
         }
 

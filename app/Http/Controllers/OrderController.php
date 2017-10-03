@@ -11,6 +11,8 @@ use App\Shipping;
 use Illuminate\Http\Request;
 use DB;
 use PDF;
+use App\NowOrder;
+use Cart;
 
 class OrderController extends Controller
 {
@@ -110,4 +112,39 @@ class OrderController extends Controller
         }
         return redirect('/manage-order');
     }
+    public function orderNow($id){
+        $productById=Product::where('id',$id)->get();
+//        return $orderDetails;
+        return view('frontEnd.product.order-now',['productById'=>$productById]);
+    }
+
+
+    public function saveOrder(Request$request){
+       $nowOrder=new NowOrder();
+       $nowOrder->product_id=$request->product_id;
+       $nowOrder->product_name=$request->product_name;
+       $nowOrder->product_quantity=$request->product_quantity;
+       $nowOrder->billing_name=$request->billing_name;
+       $nowOrder->billing_email=$request->billing_email;
+       $nowOrder->billing_mobile=$request->billing_mobile;
+       $nowOrder->billing_address=$request->billing_address;
+       $nowOrder->sipping_name=$request->sipping_name;
+       $nowOrder->sipping_email=$request->sipping_email;
+       $nowOrder->sipping_mobile=$request->sipping_mobile;
+       $nowOrder->sipping_address=$request->sipping_address;
+       $nowOrder->payment_method=$request->payment_method;
+       $nowOrder->save();
+        return redirect('/complete-order');
+    }
+
+    public function viewOrder(){
+        $nowOrders=NowOrder::all();
+        return view('admin.order.order-now.view-order',['nowOrders'=>$nowOrders]);
+    }
+    public function deleteCustomerOrder($id){
+        $nowOrder=NowOrder::find($id);
+        $nowOrder->delete();
+        return redirect('/view-order')->with('message','Delete Successful');
+    }
 }
+

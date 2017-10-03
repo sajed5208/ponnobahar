@@ -21,13 +21,25 @@ class PonnobaharController extends Controller
         $thirdTopProducts = DB::table('products')->where('top_product_status', 1)->orderBy('id', 'desc')->skip(8)->take(4)->get();
         $fourthTopProducts = DB::table('products')->where('top_product_status', 1)->orderBy('id', 'desc')->skip(12)->take(4)->get();
 
+        $topLeftOnes=DB::table('products')->where('top_left_one',1)->orderBy('id','desc')->get();
+        $topLeftTwos=DB::table('products')->where('top_left_two',1)->orderBy('id','desc')->get();
+        $topRightOnes=DB::table('products')->where('top_right_one',1)->orderBy('id','desc')->get();
+        $topRightTwos=DB::table('products')->where('top_right_two',1)->orderBy('id','desc')->get();
+
+
+
         return view('frontEnd.home.home', [
                 'publishedSliders'=>$publishedSliders,
                 'carouselSliderProducts'=>$carouselSliderProducts,
                 'firstTopProducts'=>$firstTopProducts,
                 'secondTopProducts'=>$secondTopProducts,
                 'thirdTopProducts'=>$thirdTopProducts,
-                'fourthTopProducts'=>$fourthTopProducts
+                'fourthTopProducts'=>$fourthTopProducts,
+
+                'topLeftOnes'=>$topLeftOnes,
+                'topLeftTwos'=>$topLeftTwos,
+                'topRightOnes'=>$topRightOnes,
+                'topRightTwos'=>$topRightTwos
             ]);
     }
     public function category($id) {
@@ -207,5 +219,16 @@ class PonnobaharController extends Controller
         return view('frontEnd.footer.faq');
     }
 
-
+//    public function content(){
+//        $topLeftOnes=Product::where('top_left_one',1)->get();
+//        $topLeftTwos=Product::where('top_left_two',1)->get();
+//        $topRightOnes=Product::where('top_right_one',1)->get();
+//        $topRightTwos=Product::where('top_right_two',1)->get();
+//        return view('frontEnd.home.home',[
+//            'topLeftOnes'=>$topLeftOnes,
+//            'topLeftTwos'=>$topLeftTwos,
+//            'topRightOnes'=>$topRightOnes,
+//            '$topRightTwos'=>$topRightTwos
+//        ]);
+//    }
 }

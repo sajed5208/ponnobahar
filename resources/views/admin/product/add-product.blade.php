@@ -102,7 +102,7 @@
                                     <div class="form-group">
                                         <label for="inputEmail3"  class="col-sm-3 control-label">Product Discount Price</label>
                                         <div class="col-sm-9">
-                                            <input type="number"  name="discount_product_price" class="form-control" id="product_discount_price" placeholder="Product Discount Price" onclick="discount_price(alert('ss'))">
+                                            <input type="number"  name="discount_product_price" class="form-control" id="product_discount_price" placeholder="Product Discount Price" onclick="discount_price()">
                                         </div>
                                     </div>
                                 </div>
@@ -110,8 +110,7 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Product Color</label>
                                 <div class="col-sm-10">
-                                    <select name="product_color" class="form-control" id="checked">
-                                        <option value="Select Option">Select Option</option>
+                                    <select name="product_color" class="form-control">
                                         <option value="Black">Black</option>
                                         <option value="White">White</option>
                                         <option value="Orange">Orange</option>
@@ -124,7 +123,6 @@
                                         <option value="Red">Red</option>
                                         <option value="Green">Green</option>
                                     </select>
-
                                 </div>
                             </div>
                             <div class="row">
@@ -236,7 +234,7 @@
                                 <button type="reset" class="btn btn-default">Reset</button>
                                 <button type="submit" name="btn" class="btn btn-info pull-right" onclick="validate();">Create Product Info</button>
                             </div><!-- /.box-footer -->
-                       </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -244,16 +242,14 @@
     </section>
     <script>
         function validate() {
-            var check =document.getElementById('checked').value;
             var select = document.getElementById('selection').value;
             var message = document.getElementById('message');
-            if (select=="Select Option" &&check=="Select Option"){
+            if (select=="Select Option"){
                 message.innerHTML ='Please select Publication Status ';
                 return false;
             }else {
                 return true;
             }
-
         }
     </script>
     <script>

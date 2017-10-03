@@ -65,6 +65,11 @@ Route::get('/download-order-invoice/{id}', 'OrderController@downloadOrderInvoice
 Route::get('/edit-order/{id}', 'OrderController@editOrder');
 Route::post('/update-order', 'OrderController@updateOrder');
 Route::get('/delete-order/{id}', 'OrderController@deleteOrder');
+Route::get('/order_now/{id}', 'OrderController@orderNow');
+Route::post('/save-order', 'OrderController@saveOrder');
+Route::get('/view-order', 'OrderController@viewOrder');
+Route::get('/delete-order/{id}', 'OrderController@deleteCustomerOrder');
+
 /*Admin Order Manager*/
 
 /*Admin Customer Manager*/

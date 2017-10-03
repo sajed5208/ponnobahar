@@ -108,6 +108,9 @@
             <li class="treeview">
                 <a href="{{url('/manage-customer')}}"><i class="fa fa-files-o"></i> <span>Customer Module</span></a>
             </li>
+            <li class="treeview">
+                <a href="{{url('/view-order')}}"><i class="fa fa-files-o"></i> <span>Customer Order</span></a>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->

@@ -39,8 +39,8 @@
                                     <input type="number" class="form-control" required name="product_quantity" min="1" max="200" value="1">
                                     <input type="hidden" class="form-control" required name="product_id" value="{{ $productById->id }}">
                                 </div>
-                                <button type="submit" style="background-color: deeppink" class="pull-right"><i class="fa fa-shopping-cart"></i> Add To Cart </button>
-                                <button type="submit" style="background-color: deeppink"> Order Now</button>
+                                <button type="submit" style="background-color: deeppink; margin-top: -10px;" class="pull-right"><i class="fa fa-shopping-cart"></i> Add To Cart </button>
+                                <li style="list-style: none; " ><a href="{{url('/order_now/'.$productById->id)}}" style=" background: deeppink; color: white; padding: 10px;">Order Now</a></li>
                             </form>
                         </div>
                         <div class="sb-prod-cont">
