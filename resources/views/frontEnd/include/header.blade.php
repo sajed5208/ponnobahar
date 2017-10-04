@@ -42,23 +42,25 @@
                     </div>
                 </div>
                 <div class="col-md-7 col-sm-12 col-xs-12">
-                    <div class="sb-search" style=" position: relative; top: 8px;">
-                        <div class="input-group">
-                            <input type="text" class="form-control" aria-label="...">
-                            <div class="input-group-addon search-category">
-                                <select name="category" style="height: 36px; cursor: pointer; border-left: none; border-top: none; border-bottom: none; padding: 0px 5px; background-color: lightpink;">
-                                    <option>Select A Category</option>
-                                    <option>Category One</option>
-                                    <option>Category Two</option>
-                                    <option>Category Three</option>
-                                </select>
-                                <span class="glyphicon glyphicon-search"></span>
+                    <form>
+                        <div class="sb-search" style=" position: relative; top: 8px;">
+                            <div class="input-group">
+                                <input type="text" class="form-control" aria-label="...">
+                                <div class="input-group-addon search-category">
+                                    <select name="category" style="height: 36px; cursor: pointer; border-left: none; border-top: none; border-bottom: none; padding: 0px 5px; background-color: lightpink;">
+                                        <option>Select A Category</option>
+                                        <option>Category One</option>
+                                        <option>Category Two</option>
+                                        <option>Category Three</option>
+                                    </select>
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </div>
                             </div>
+                            <button type="button" class="btn btn-primary" style="background-color: deeppink;  float: right; position: relative; bottom: 40px; left: 1px; height: 40px;">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
                         </div>
-                        <button type="button" class="btn btn-primary" style="background-color: deeppink;  float: right; position: relative; bottom: 40px; left: 1px; height: 40px;">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </div>
+                    </form>
                 </div>
                 <div class="col-md-2 col-sm-12 col-xs-12">
                     <div class="row">

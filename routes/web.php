@@ -131,6 +131,10 @@ Route::get('/edit-brand/{id}','BrandController@editBrand');
 Route::post('/update-brand','BrandController@updateBrand');
 Route::get('/delete-category/{id}','BrandController@deleteBrand');
 
+/*FrontEdn Brand View*/
+Route::get('/brand-product-view/{brand_id}','BrandController@brandProductView');
+/*FrontEdn Brand View*/
+
 
 Route::get('/add-slider','SliderController@addSlider');
 Route::get('/slider-sub-category/{id}','SliderController@sliderSubCategoryByCategoryId');

@@ -4,6 +4,8 @@
 
     <section style="padding: 10px 0px;">
         <div class="container">
+            <h4 class="text-center" style="color: deeppink">{{Session::get('message')}}</h4>
+            <hr>
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4">
                     <div class="row">
@@ -91,36 +93,36 @@
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-8 col-xs-8">
                     <div class="row">
-                        @foreach($productsByFilter as $productByFilter)
+                        @foreach($brandProducts as $brandProduct)
                             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 custom-hover" style="border: 1px solid deeppink; border-radius: 8px;">
                                 <div class="col-sm-6 category-product-item text-left" style="">
                                     <a class="cat-display" style="color: deeppink; cursor: default">
-                                        <?php if ($productByFilter->product_sku>=1){echo 'Available';}
-                                        else if ($productByFilter->product_sku==0){echo 'Sold Out';}?></a>
+                                        <?php if ($brandProduct->product_sku>=1){echo 'Available';}
+                                        else if ($brandProduct->product_sku==0){echo 'Sold Out';}?></a>
                                 </div>
                                 <div class="col-sm-6 category-product-item text-right" style="">
-                                    <a href="" class="cat-display" style="color: deeppink;">Add To Wishlist</a>
+                                    <a href="{{url('/add-wishlist/'.$brandProduct->id,$brandProduct->category_id)}}" class="cat-display" style="color: deeppink;">Add To Wishlist</a>
                                 </div>
 
-                                <a href="{{ url('/product-details/'.$productByFilter->id) }}"><img src="{{ asset($productByFilter->product_image) }}" alt="" style="padding: 0px; margin-top: -10px; border-radius: 5px;" class="img-responsive cate-img"></a>
+                                <a href="{{ url('/product-details/'.$brandProduct->id) }}"><img src="{{ asset($brandProduct->product_image) }}" alt="" style="padding: 0px; margin-top: -10px; border-radius: 5px;" class="img-responsive cate-img"></a>
                                 <div class="col-sm-12" style="padding-top: 3px; height: 32px;">
-                                    <p class="text-center" style="">{{ $productByFilter->product_name }}</p>
+                                    <p class="text-center" style="">{{ $brandProduct->product_name }}</p>
                                     <hr style="background-color: deeppink; margin-top: -8px;"/>
                                 </div>
                                 <div class="col-sm-6" style="padding: 0px;">
                                     <a href="" class="btn btn-default btn-block cat-display" style="border-radius: 0px; background-color: deeppink; color: white;">Add To Cart</a>
                                 </div>
                                 <div class="col-sm-6" style=" padding: 0px;">
-                                    <a href="{{ url('/product-details/'.$productByFilter->id) }}" class="btn btn-default btn-block cat-display" style="border-radius: 0px; background-color: deeppink; color: white;">Details..</a>
+                                    <a href="{{ url('/product-details/'.$brandProduct->id) }}" class="btn btn-default btn-block cat-display" style="border-radius: 0px; background-color: deeppink; color: white;">Details..</a>
                                 </div>
                                 <div class="col-sm-4 text-center" style="margin-top: 2px;  padding: 0px;">
-                                    <p style="padding-top: 0px;">TK. {{ $productByFilter->product_price }}</p>
+                                    <p style="padding-top: 0px;">TK. {{ $brandProduct->product_price }}</p>
                                 </div>
                                 <div class="col-sm-4 text-center" style="margin-top: 2px; padding: 0px;">
-                                    <p style="padding-top: 0px; color: red;">{{ $productByFilter->discount_product_amount }}% Off</p>
+                                    <p style="padding-top: 0px; color: red;">{{ $brandProduct->discount_product_amount }}% Off</p>
                                 </div>
                                 <div class="col-sm-4 text-center" style="margin-top: 2px;  padding: 0px;">
-                                    <p style="padding-top: 0px;">TK. {{ $productByFilter->discount_product_price }}</p>
+                                    <p style="padding-top: 0px;">TK.{{ $brandProduct->discount_product_price }}</p>
                                 </div>
                             </div>
                         @endforeach

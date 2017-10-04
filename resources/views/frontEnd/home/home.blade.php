@@ -9,7 +9,7 @@
                     <div class="col-sm-12">
                         <div class="slider-add">
                             @foreach($topLeftOnes->take(1) as $topLeftOne)
-                                    <a href=""><img src="{{ asset($topLeftOne->product_image) }}" alt="" style="height: 100%; width: 100%; border-radius: 5px;" /></a>
+                                    <a href=""><img class="image-hover" src="{{ asset($topLeftOne->product_image) }}" alt="" style="height: 100%; width: 100%; border-radius: 5px;" /></a>
                             @endforeach
                         </div>
                     </div>
@@ -19,7 +19,7 @@
                     <div class="col-sm-12">
                         <div class="slider-add">
                             @foreach($topLeftTwos->take(1) as $topLeftTwo)
-                                    <a href=""><img src="{{ asset($topLeftTwo->product_image) }}" alt="" style="height: 100%; width: 100%; border-radius: 5px;" /></a>
+                                    <a href=""><img class="image-hover" src="{{ asset($topLeftTwo->product_image) }}" alt="" style="height: 100%; width: 100%; border-radius: 5px;" /></a>
                             @endforeach
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                     <div class="col-sm-12">
                         <div class="slider-add">
                             @foreach($topRightOnes->take(1) as $topRightOne)
-                                     <a href=""><img src="{{ asset($topRightOne->product_image) }}" alt="" style="height: 100%; width: 100%; border-radius: 5px;" /></a>
+                                     <a href=""><img class="image-hover" src="{{ asset($topRightOne->product_image) }}" alt="" style="height: 100%; width: 100%; border-radius: 5px;" /></a>
                             @endforeach
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                     <div class="col-sm-12" style="margin-top: -13px;">
                         <div class="slider-add">
                             @foreach($topRightTwos->take(1) as $topRightTwo)
-                                     <a href=""><img src="{{ asset($topRightTwo->product_image) }}" alt="" style="height: 100%; width: 100%; border-radius: 5px;" /></a>
+                                     <a href=""><img class="image-hover" src="{{ asset($topRightTwo->product_image) }}" alt="" style="height: 100%; width: 100%; border-radius: 5px;" /></a>
                             @endforeach
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                 <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1140px;height:200px;overflow:hidden;">
                     @foreach($carouselSliderProducts as $carouselSliderProduct)
                     <div class="item">
-                        <img data-u="image" src="{{ asset($carouselSliderProduct->product_image) }}" />
+                        <a href="{{url('/brand-product-view/'.$carouselSliderProduct->brand_id)}}"><img src="{{ asset($carouselSliderProduct->product_image) }}" /></a>
                     </div>
                     @endforeach
                     <a data-u="any" href="https://www.jssor.com" style="display:none">image gallery</a>
@@ -125,7 +125,7 @@
         <div class="row">
             @foreach($firstTopProducts as $firstTopProduct)
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" style="padding-right: 0px; padding-left: 6px;">
-                <a href="{{ url('/category/'.$firstTopProduct->category_id) }}"><img src="{{ asset($firstTopProduct->product_image) }}" alt="" style="height: 300px; border-radius: 5px;"/></a>
+                <a href="{{ url('/category/'.$firstTopProduct->category_id) }}"><img class="image-hover" src="{{ asset($firstTopProduct->product_image) }}" alt="" style="height: 300px; border-radius: 5px;"/></a>
             </div>
             @endforeach
         </div>
@@ -133,7 +133,7 @@
         <div class="row" style="margin-top: -14px;">
             @foreach($secondTopProducts as $secondTopProduct)
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" style="padding-right: 0px; padding-left: 6px;">
-                <a href="{{ url('/category/'.$secondTopProduct->category_id) }}"><img src="{{ asset($secondTopProduct->product_image) }}" alt="" style="height: 300px; border-radius: 5px;"/></a>
+                <a href="{{ url('/category/'.$secondTopProduct->category_id) }}"><img class="image-hover" src="{{ asset($secondTopProduct->product_image) }}" alt="" style="height: 300px; border-radius: 5px;"/></a>
             </div>
             @endforeach
         </div>
@@ -141,7 +141,7 @@
         <div class="row" style="margin-top: -14px;">
             @foreach($thirdTopProducts as $thirdTopProduct)
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" style="padding-right: 0px; padding-left: 6px;">
-                <a href="{{ url('/category/'.$thirdTopProduct->category_id) }}"><img src="{{ asset($thirdTopProduct->product_image) }}" alt="" style="height: 300px; border-radius: 5px;"/></a>
+                <a href="{{ url('/category/'.$thirdTopProduct->category_id) }}"><img class="image-hover" src="{{ asset($thirdTopProduct->product_image) }}" alt="" style="height: 300px; border-radius: 5px;"/></a>
             </div>
             @endforeach
         </div>

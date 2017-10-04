@@ -96,7 +96,9 @@
                         @foreach($categoryProducts as $categoryProduct)
                         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 custom-hover" style="border: 1px solid deeppink; border-radius: 8px;">
                             <div class="col-sm-6 category-product-item text-left" style="">
-                                <a class="cat-display" style="color: deeppink; cursor: default">Sold Out</a>
+                                <a class="cat-display" style="color: deeppink; cursor: default">
+                                    <?php if ($categoryProduct->product_sku>=1){echo 'Available';}
+                                    else if ($categoryProduct->product_sku==0){echo 'Sold Out';}?></a>
                             </div>
                             <div class="col-sm-6 category-product-item text-right" style="">
                                 <a href="{{url('/add-wishlist/'.$categoryProduct->id,$categoryProduct->category_id)}}" class="cat-display" style="color: deeppink;">Add To Wishlist</a>
