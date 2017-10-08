@@ -21,7 +21,7 @@ class CategoryController extends Controller
     }
     public function manageCategory(){
         $categories=Category::all();
-        return view('admin.category.manage-category',['categories'=>$categories]);
+        return view('admin.category.manage-category', ['categories'=>$categories,]);
     }
     public function unpublishedCategory($id){
        $category=Category::find($id);

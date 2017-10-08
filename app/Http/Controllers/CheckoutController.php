@@ -22,6 +22,18 @@ class CheckoutController extends Controller
         ]);
     }
     public function saveCustomerInfo(Request $request) {
+        $this->validate($request, array(
+            'first_name'=>'required|max:20|min:5',
+            'last_name'=>'required|max:20|min:5',
+            'email_address'=>'required',
+            'password'=>'required|max:10|min:6',
+            'mobile_number'=>'required|max:16',
+        ));
+        $customerImage = $request->file('customer_image');
+        $customerImageName = $customerImage->getClientOriginalName();
+        $uploadPath = 'customer_image/';
+        $imageUrl1 = $uploadPath . $customerImageName;
+        $customerImage->move($uploadPath, $customerImageName);
         $customer = new Customer();
         $customer->first_name = $request->first_name;
         $customer->last_name = $request->last_name;
@@ -29,6 +41,7 @@ class CheckoutController extends Controller
         $customer->password = bcrypt($request->password);
         $customer->mobile_number = $request->mobile_number;
         $customer->date_of_birth = $request->date_of_birth;
+        $customer->customer_image=$imageUrl1;
         $customer->address = $request->address;
         $customer->national_id = $request->national_id;
         $customer->district_name = $request->district_name;

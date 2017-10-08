@@ -29,7 +29,7 @@
                                         <span class="input-group-addon" style="background-color: deeppink;">
                                             <span class="glyphicon glyphicon-envelope" style="color: white;"></span>
                                         </span>
-                                            <input type="email" required name="email_address" class="form-control" placeholder="Email Address">
+                                            <input type="email" name="email_address" class="form-control" placeholder="Email Address">
                                             @if($errors->has('email_address'))
                                                 <span style="color: deeppink;">
                                                 {{$errors->first('email_address')}}
@@ -42,7 +42,7 @@
                                         <span class="input-group-addon" style="background-color: deeppink;">
                                             <span class="glyphicon glyphicon-lock" style="color: white;"></span>
                                         </span>
-                                            <input type="password" required name="password" class="form-control" placeholder="Password">
+                                            <input type="password"  name="password" class="form-control" placeholder="Password">
                                             @if($errors->has('password'))
                                                 <span style="color: deeppink;">
                                                 {{$errors->first('password')}}
@@ -86,7 +86,7 @@
                         </div>
                         <div class="panel-body" style="padding-bottom: 0px;">
                             <div class="well" style="padding-bottom: 0px; background-color: lightpink">
-                                <form action="{{ url('/registration') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
+                                <form action="{{ url('/new-customer') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <div class="form-group">
                                         <label class="control-label col-md-4">First Name  <span class="text-danger">*</span></label>

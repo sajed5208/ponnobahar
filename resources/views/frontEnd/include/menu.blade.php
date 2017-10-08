@@ -17,7 +17,7 @@
                 <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
                     <li class="dropdown megamenu-fw"> <a href="{{ url('/') }}">Home</a></li>
                     <li class="dropdown megamenu-fw">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Health and Beauty</a>
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Health And Beauty</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
@@ -263,7 +263,7 @@
                         </ul>
                     </li>
                     <li class="dropdown megamenu-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Islamic Collection</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Islamic Items</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
@@ -312,7 +312,7 @@
                         </ul>
                     </li>
                     <li class="dropdown megamenu-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gift Items </a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gift Items</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
@@ -361,7 +361,7 @@
                         </ul>
                     </li>
                     <li class="dropdown megamenu-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Food Items</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Foot Items</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
