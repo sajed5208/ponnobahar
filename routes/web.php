@@ -38,8 +38,10 @@ Route::get('/complete-order', 'CheckoutController@completeOrderInfo');
 
 /*Review*/
 Route::post('/add-review', 'ReviewController@addReview');
-Route::get('/view-review', 'ReviewController@viewReview');
+Route::get('/manage-review', 'ReviewController@manageReview');
 Route::get('/unpublished-review/{id}', 'ReviewController@unpublishedReview');
+Route::get('/published-review/{id}', 'ReviewController@publishedReview');
+Route::get('/delete-review/{id}', 'ReviewController@deleteReview');
 /*Review*/
 
 

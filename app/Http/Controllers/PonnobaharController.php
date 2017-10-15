@@ -8,6 +8,7 @@ use App\Slider;
 use Illuminate\Http\Request;
 use DB;
 use App\Category;
+use App\Review;
 
 class PonnobaharController extends Controller
 {
@@ -204,10 +205,17 @@ class PonnobaharController extends Controller
         $productImages = ProductSubImage::where('product_id', $id)->get();
         $productById = Product::find($id);
         $categoryProducts = Product::where('category_id', $productById->category_id)->orderBy('id', 'desc')->take(20)->get();
+//        $reviews=DB::table('reviews')->where('publication_status',1)->orderBy('id','desc')->get();
+        $reviews=DB::table('reviews')
+            ->join('customers','reviews.customer_id','=','customers.id')
+            ->select('reviews.*','customers.first_name','customers.last_name','customers.customer_image')
+            ->where('publication_status',1)
+            ->get();
         return view('frontEnd.product.product-details', [
             'productImages'=>$productImages,
             'productById'=>$productById,
-            'categoryProducts' =>$categoryProducts
+            'categoryProducts' =>$categoryProducts,
+            'reviews'=>$reviews
         ]);
     }
 
@@ -230,16 +238,5 @@ class PonnobaharController extends Controller
         return view('frontEnd.footer.faq');
     }
 
-//    public function content(){
-//        $topLeftOnes=Product::where('top_left_one',1)->get();
-//        $topLeftTwos=Product::where('top_left_two',1)->get();
-//        $topRightOnes=Product::where('top_right_one',1)->get();
-//        $topRightTwos=Product::where('top_right_two',1)->get();
-//        return view('frontEnd.home.home',[
-//            'topLeftOnes'=>$topLeftOnes,
-//            'topLeftTwos'=>$topLeftTwos,
-//            'topRightOnes'=>$topRightOnes,
-//            '$topRightTwos'=>$topRightTwos
-//        ]);
-//    }
+
 }

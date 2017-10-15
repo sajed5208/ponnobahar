@@ -67,17 +67,17 @@
                         </ul>
                         <div class="tab-content" style="border-top: 1px solid deeppink; padding: 10px;">
                             <div id="review" class="tab-pane fade in active">
+                                @foreach($reviews as $review)
                                 <div class="media">
-
                                     <div style="float: left;" class="media-left">
-                                        <img src="{{asset('front')}}/img/img_avatar1.png" class="media-object" style="width:60px">
+                                        <img src="{{asset($review->customer_image)}}" class="media-object" style="width:60px">
                                     </div>
                                     <div style="float: left; padding-bottom: 20px; margin-left: 10px;" class="media-body">
-                                        <h4 class="media-heading">John Doe</h4>
-                                        <p>hjbkhjbkhj</p>
+                                        <h4 class="media-heading">{{$review->first_name.' '.$review->last_name}}</h4>
+                                        <p>{{$review->review_product}}</p>
                                     </div>
-
                                 </div>
+                                @endforeach
                                 @if($customerId = Session::get('customerId'))
                                     <form action="{{url('/add-review')}}" method="POST">
                                         {{ csrf_field() }}

@@ -27,8 +27,10 @@
                         <table id="example1" class="table table-bordered table-hover">
                             <thead>
                             <tr>
-                                <th>Category Name</th>
-                                <th>Category Description</th>
+                                <th>S.No</th>
+                                <th>Customer Name</th>
+                                <th>Product Name</th>
+                                <th>Product Review</th>
                                 <th>Publication Status</th>
                                 <th>Action</th>
                             </tr>
@@ -36,21 +38,23 @@
                             <tbody>
                                @foreach($reviews as $review)
                                 <tr>
+                                    <td>{{$review->id}}</td>
                                     <td>{{$review->first_name.$review->last_name}}</td>
+                                    <td>{{$review->product_name}}</td>
                                     <td>{{$review->review_product}}</td>
-                                    <td>{{$review->publication_status}}</td>
+                                    <td>{{$review->publication_status==1?'Published':'Unpublished'}}</td>
                                     <td class="center">
-                                        @if($review->publication_status==0)
-                                        <a href="{{url('/unpublished-review/'.$review->id)}}" class="btn btn-primary btn-xs">
-                                        <span class="glyphicon glyphicon-arrow-down" title="Unpublished"></span>
-                                        </a>
+                                        @if($review->publication_status==1)
+                                            <a href="{{url('/unpublished-review/'.$review->id)}}" class="btn btn-primary btn-xs">
+                                                <span class="glyphicon glyphicon-arrow-down" title="Unpublished"></span>
+                                            </a>
                                         @else
-                                        <a href="{{url('/published-review/'.$review->id)}}" class="btn btn-warning btn-xs">
-                                        <span class="glyphicon glyphicon-arrow-up" title="Published"></span>
-                                        </a>
+                                            <a href="{{url('/published-review/'.$review->id)}}" class="btn btn-warning btn-xs">
+                                                <span class="glyphicon glyphicon-arrow-up" title="Published"></span>
+                                            </a>
                                         @endif
                                         <a href="{{url('/delete-review/'.$review->id)}}" class="btn btn-danger btn-xs">
-                                        <span class="glyphicon glyphicon-trash" title="Delete" onclick="return confirm('Are You Sure Delete This');"></span>
+                                            <span class="glyphicon glyphicon-trash" title="Delete" onclick="return confirm('Are You Sure Delete This');"></span>
                                         </a>
                                     </td>
                                 </tr>

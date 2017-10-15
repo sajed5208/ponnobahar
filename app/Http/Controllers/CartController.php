@@ -45,6 +45,7 @@ class CartController extends Controller
             return redirect('/product-details/'.$productId)->with('message','This product not available in stock');
         }
     }
+
     public function showCart() {
         $cartProducts=Cart::content();
         $recentProducts = Product::orderBy('id', 'desc')->take(20)->get();

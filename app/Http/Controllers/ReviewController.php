@@ -20,19 +20,30 @@ class ReviewController extends Controller
         return redirect('/product-details/'.$request->product_id);
 
     }
-    public function viewReview(){
-        $customerId = Session::get('customerId');
-        $reviews=DB::table('customers')
-//            ->join('reviews','products.id','=','reviews.product_id')
-            ->join('reviews','customers.id','=','reviews.customer_id')
-            ->where('reviews.customer_id',$customerId)
+    public function manageReview(){
+        $reviews=DB::table('reviews')
+            ->join('products','reviews.product_id','=','products.id')
+            ->join('customers','reviews.customer_id','=','customers.id')
+            ->select('reviews.*','products.product_name','customers.first_name','customers.last_name')
             ->get();
         return view('admin.review.manage-review',['reviews'=>$reviews]);
     }
+
     public function unpublishedReview($id){
-        $review=Review::find($id);
+        $review= Review::find($id);
+        $review->publication_status = 0;
+        $review->save();
+        return redirect ('/manage-review')->with('message','Review Info Unpublished Successfully');
+    }
+    public function publishedReview($id){
+        $review= Review::find($id);
         $review->publication_status = 1;
         $review->save();
-        return redirect ('/manage-review');
+        return redirect ('/manage-review')->with('message','Review Info published Successfully');
+    }
+    public function deleteReview($id){
+        $review=Review::find($id);
+        $review->delete();
+        return redirect ('/manage-review')->with('message','Review Info Delete Successfully');
     }
 }

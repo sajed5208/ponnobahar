@@ -112,7 +112,7 @@
                 <a href="{{url('/view-order')}}"><i class="fa fa-files-o"></i> <span>Customer Order</span></a>
             </li>
             <li class="treeview">
-                <a href="{{url('/view-review')}}"><i class="fa fa-files-o"></i> <span>Review Module</span></a>
+                <a href="{{url('/manage-review')}}"><i class="fa fa-files-o"></i> <span>Review Module</span></a>
             </li>
         </ul>
     </section>
