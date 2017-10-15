@@ -55,10 +55,10 @@
                                         <a href="" class="btn btn-primary btn-xs">
                                             <span class="glyphicon glyphicon-arrow-down" title="Unpublished Product"></span>
                                         </a>
-                                        <a href="" class="btn btn-success btn-xs">
+                                        <a href="{{url('/edit-product/'.$allPublishedProduct->id)}}" class="btn btn-success btn-xs">
                                             <span class="glyphicon glyphicon-edit" title="Edit Product"></span>
                                         </a>
-                                        <a href="" class="btn btn-danger btn-xs">
+                                        <a href="{{url('/delete-product/'.$allPublishedProduct->id)}}" class="btn btn-danger btn-xs">
                                             <span class="glyphicon glyphicon-trash" title="Delete Product" onclick="return confirm('Are You Sure Delete This');"></span>
                                         </a>
                                     </td>

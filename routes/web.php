@@ -161,6 +161,25 @@ Route::get('/select-sub-category/{id}', 'ProductController@selectSubCategoryByCa
 Route::post('/new-product','ProductController@saveProductInfo');
 Route::get('/manage-product','ProductController@manageProduct');
 Route::get('/view-product/{id}','ProductController@viewProductInfo');
+Route::get('/edit-product/{id}','ProductController@editProduct');
+Route::post('/update-product','ProductController@updateProduct');
+
+
+
+
+
+Route::get('/add-size-width','SizeWidthController@addSizeWidth');
+Route::post('/new-size-width','SizeWidthController@saveSizeWidth');
+Route::get('/manage-size-width','SizeWidthController@manageSizeWidth');
+Route::get('/unpublished-size-width/{id}','SizeWidthController@unpublishedSizeWidth');
+Route::get('/published-size-width/{id}','SizeWidthController@publishedSizeWidth');
+Route::get('/edit-size-width/{id}','SizeWidthController@editSizeWidth');
+Route::post('/update-size-width','SizeWidthController@updateSizeWidth');
+Route::get('/delete-size-width/{id}','SizeWidthController@deleteSizeWidth');
+
+
+
+
 
 
 /*about Module*/

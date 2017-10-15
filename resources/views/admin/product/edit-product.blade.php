@@ -5,13 +5,13 @@
 @section('body')
     <section class="content-header">
         <h1>
-            Create Product Form
+            Edit Product Form
             <small>Preview</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="{{ url('/manage-product') }}">Manage Product</a></li>
-            <li class="active">Add Product</li>
+            <li class="active">Edit Product</li>
         </ol>
     </section>
     <!-- Horizontal Form -->
@@ -24,7 +24,7 @@
                     </div><!-- /.box-header -->
                     <h4 class="text-center">{{Session::get('message')}}</h4>
                     <!-- form start -->
-                    <form class="form-horizontal" action="{{ url('/new-product') }}" method="POST" enctype="multipart/form-data">
+                    <form class="form-horizontal" name="editProductForm" action="{{url('/update-product')}}" method="POST" enctype="multipart/form-data">
                         {{csrf_field()}}
                         <div class="box-body">
                             <div class="row">
@@ -64,7 +64,8 @@
                                     <div class="form-group">
                                         <label for="inputEmail3" class="col-sm-4 control-label">Product Size/Weight</label>
                                         <div class="col-sm-8">
-                                            <input type="text" name="product_size_weight" class="form-control" id="inputEmail3" placeholder="Product Size or Weight">
+                                            <input type="text" value="{{$product->product_size_weight}}" name="product_size_weight" class="form-control" id="inputEmail3" placeholder="Product Size or Weight">
+                                            <input type="hidden" value="{{$product->id}}" name="productId" class="form-control" id="inputEmail3">
                                         </div>
                                     </div>
                                 </div>
@@ -72,31 +73,31 @@
                                     <div class="form-group">
                                         <label for="inputEmail3"  class="col-sm-3 control-label">Product Name</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="product_name" class="form-control" id="inputEmail3" placeholder="Product Name">
+                                            <input type="text" value="{{$product->product_name}}" name="product_name" class="form-control" id="inputEmail3" placeholder="Product Name">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="inputEmail3"  class="col-sm-3 control-label">Product Code</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="product_code" class="form-control" id="inputEmail3" placeholder="Product Name">
+                                            <input type="text" value="{{$product->product_code}}" name="product_code" class="form-control" id="inputEmail3" placeholder="Product Name">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="inputEmail3"  class="col-sm-3 control-label">Product Sku</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="product_sku" class="form-control" id="inputEmail3" placeholder="Product Sku">
+                                            <input type="text" value="{{$product->product_sku}}" name="product_sku" class="form-control" id="inputEmail3" placeholder="Product Sku">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="inputEmail3"  class="col-sm-3 control-label">Product Price</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="product_price" class="form-control" id="price" placeholder="Product price">
+                                            <input type="text" value="{{$product->product_price}}" name="product_price" class="form-control" id="price" placeholder="Product price">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="inputEmail3"  class="col-sm-3 control-label">Product Discount Amount</label>
                                         <div class="col-sm-9">
-                                            <input type="number" value="0" name="discount_product_amount" class="form-control" id="product_discount_amount" placeholder="Product Discount Amount">
+                                            <input type="number" value="{{$product->discount_product_amount}}" name="discount_product_amount" class="form-control" id="product_discount_amount" placeholder="Product Discount Amount">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -195,13 +196,13 @@
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Product Short Description</label>
                                 <div class="col-sm-10">
-                                    <textarea name="product_short_description" rows="3" class="form-control"></textarea>
+                                    <textarea name="product_short_description" rows="3" class="form-control">{{$product->product_short_description}}</textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Product Long Description</label>
                                 <div class="col-sm-10">
-                                    <textarea id="editor1" name="product_long_description" rows="10" cols="80"></textarea>
+                                    <textarea id="editor1" name="product_long_description" rows="10" cols="80">{{$product->product_long_description}}</textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -240,6 +241,21 @@
             </div>
         </div>
     </section>
+
+    <script>
+        document.forms['editProductForm'].elements['category_id'].value='{{$product->category_id}}'
+        document.forms['editProductForm'].elements['sub_category_id'].value='{{$product->sub_category_id}}'
+        document.forms['editProductForm'].elements['brand_id'].value='{{$product->brand_id}}'
+        document.forms['editProductForm'].elements['publication_status'].value='{{$product->publication_status}}'
+        document.forms['editProductForm'].elements['product_color'].value='{{$product->product_color}}'
+        document.forms['editProductForm'].elements['top_left_one'].value='{{$product->top_left_one}}'
+        document.forms['editProductForm'].elements['top_left_two'].value='{{$product->top_left_two}}'
+        document.forms['editProductForm'].elements['top_right_one'].value='{{$product->top_right_one}}'
+        document.forms['editProductForm'].elements['top_right_two'].value='{{$product->top_right_two}}'
+        document.forms['editProductForm'].elements['carousel_slider'].value='{{$product->carousel_slider}}'
+        document.forms['editProductForm'].elements['top_product_status'].value='{{$product->top_product_status}}'
+    </script>
+
     <script>
         function validate() {
             var select = document.getElementById('selection').value;

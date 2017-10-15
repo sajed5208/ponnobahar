@@ -73,11 +73,58 @@ class ProductController extends Controller
             }
         }
     }
-
     public function saveProductInfo(Request $request) {
         $productId = $this->saveProductBasicInfo($request);
         $this->uploadProductImage($request, $productId);
         return redirect('/add-product')->with('message','Product Info Save Successfully');
+    }
+    public function editProduct($id){
+        $categories=Category::where('publication_status',1)->get();
+        $subCategories=SubCategory::where('publication_status',1)->get();
+        $brands=Brand::where('publication_status',1)->get();
+        $productById=Product::find($id);
+        return view('admin.product.edit-product',[
+            'product'=>$productById,
+            'categories'=>$categories,
+            'subCategories'=>$subCategories,
+            'brands'=>$brands
+        ]);
+    }
+    public function updateProduct(Request$request){
+        $productImage=$request->file('product_image');
+        if ($productImage){
+            return 'hey';
+        }else{
+
+            $this->updateWithOutImage($request);
+            return redirect('/manage-product')->with('message','Product Info Update Successful');
+        }
+    }
+    public function updateWithOutImage($request){
+        $productId=$request->productId;
+        $product =Product::find($productId);
+        $product->category_id = $request->category_id;
+        $product->sub_category_id = $request->sub_category_id;
+        $product->brand_id = $request->brand_id;
+        $product->product_name = $request->product_name;
+        $product->product_code = $request->product_code;
+        $product->product_size_weight = $request->product_size_weight;
+        $product->product_color = $request->product_color;
+        $product->product_sku = $request->product_sku;
+        $product->product_price = $request->product_price;
+        $product->discount_product_amount=$request->discount_product_amount;
+        $product->discount_product_price=$request->discount_product_price;
+        $product->top_left_one = $request->top_left_one;
+        $product->top_left_two = $request->top_left_two;
+        $product->top_right_one = $request->top_right_one;
+        $product->top_right_two = $request->top_right_two;
+        $product->carousel_slider = $request->carousel_slider;
+        $product->top_product_status = $request->top_product_status;
+        $product->product_short_description = $request->product_short_description;
+        $product->product_long_description = $request->product_long_description;
+        $product->product_image = $this->saveProductMainImage($request);
+        $product->publication_status=$request->publication_status;
+        $product->save();
     }
 
     public function manageProduct() {
