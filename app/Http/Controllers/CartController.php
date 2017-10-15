@@ -8,19 +8,42 @@ use Cart;
 
 class CartController extends Controller
 {
+    public function directAddToCart($id){
+        $productById=Product::where('id', $id)->first();
+        if ($productById->product_sku >0){
+            Cart::add([
+                'id' => $id,
+                'name' => $productById->product_name,
+                'price' => $productById->product_price,
+                'qty' => 1,
+                'options' => [
+                    'code' => $productById->product_code
+                ]
+            ]);
+            return redirect('/show-cart');
+        }else{
+            return redirect('/product-details/'.$id)->with('message','This product not available in stock');
+        }
+    }
+
+
     public function addToCart(Request $request) {
         $productId=$request->product_id;
         $productById=Product::where('id', $productId)->first();
-        Cart::add([
-            'id' => $productId,
-            'name' => $productById->product_name,
-            'price' => $productById->product_price,
-            'qty' => $request->product_quantity,
-            'options' => [
-                'code' => $productById->product_code
-            ]
-        ]);
-        return redirect('/show-cart');
+        if ($productById->product_sku >0){
+            Cart::add([
+                'id' => $productId,
+                'name' => $productById->product_name,
+                'price' => $productById->product_price,
+                'qty' => $request->product_quantity,
+                'options' => [
+                    'code' => $productById->product_code
+                ]
+            ]);
+            return redirect('/show-cart');
+        }else{
+            return redirect('/product-details/'.$productId)->with('message','This product not available in stock');
+        }
     }
     public function showCart() {
         $cartProducts=Cart::content();

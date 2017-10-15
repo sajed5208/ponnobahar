@@ -28,15 +28,16 @@ class PonnobaharController extends Controller
         $topRightTwos=DB::table('products')->where('top_right_two',1)->orderBy('id','desc')->get();
 
         /*Menu*/
-        $healthAndBeauties=DB::table('categories')->where('id',1)->get();
-        $clothings=DB::table('categories')->where('id',2)->get();
-        $footwears=DB::table('categories')->where('id',3)->get();
-        $jewelries=DB::table('categories')->where('id',4)->get();
-        $lifestyles=DB::table('categories')->where('id',5)->get();
-        $islamics=DB::table('categories')->where('id',6)->get();
-        $giftItems=DB::table('categories')->where('id',7)->get();
-        $footItems=DB::table('categories')->where('id',8)->get();
+        $healthAndBeautyById=DB::table('categories')->where('id',1)->first();
+        $clothingById=DB::table('categories')->where('id',2)->first();
+        $footwearById=DB::table('categories')->where('id',3)->first();
+        $jewelryById=DB::table('categories')->where('id',4)->first();
+        $lifestyleById=DB::table('categories')->where('id',5)->first();
+        $islamicById=DB::table('categories')->where('id',6)->first();
+        $giftItemById=DB::table('categories')->where('id',7)->first();
+        $footItemById=DB::table('categories')->where('id',8)->first();
         /*Menu*/
+
         return view('frontEnd.home.home', [
                 'publishedSliders'=>$publishedSliders,
                 'carouselSliderProducts'=>$carouselSliderProducts,
@@ -49,19 +50,10 @@ class PonnobaharController extends Controller
                 'topLeftTwos'=>$topLeftTwos,
                 'topRightOnes'=>$topRightOnes,
                 'topRightTwos'=>$topRightTwos,
-            /*Menu*/
-                'healthAndBeauty'=>$healthAndBeauties,
-                'clothings'=>$clothings,
-                'footwears'=>$footwears,
-                'jewelries'=>$jewelries,
-                'lifestyles'=>$lifestyles,
-                'islamics'=>$islamics,
-                'giftItems'=>$giftItems,
-                'footItems'=>$footItems,
-            /*Menu*/
             ]);
     }
     public function category($id) {
+
         $categoryProducts = Product::where('category_id', $id)->orderBy('id', 'desc')->get();
         return view('frontEnd.category.category', ['categoryProducts'=>$categoryProducts]);
     }

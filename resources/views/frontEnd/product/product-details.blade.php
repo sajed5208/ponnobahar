@@ -1,6 +1,7 @@
 @extends('frontEnd.master')
 
 @section('body')
+    <h2 class="text-center" style="color: red;">{{Session::get('message')}}</h2>
     <section class="sb-prod-det-img" style="background-color: white;">
         <div class="container" style="padding: 0px;">
             <div class="row">
@@ -36,10 +37,10 @@
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label>Qantity: </label>
-                                    <input type="number" class="form-control" required name="product_quantity" min="1" max="200" value="1">
-                                    <input type="hidden" class="form-control" required name="product_id" value="{{ $productById->id }}">
+                                    <input type="number"  required name="product_quantity" min="1" max="200" value="1">   <a href="#reviews"><h4 class="pull-right">Be the first to review this product</h4></a>
+                                    <input type="hidden"  required name="product_id" value="{{ $productById->id }}">
                                 </div>
-                                <button type="submit" style="background-color: deeppink; margin-top: -10px;" class="pull-right"><i class="fa fa-shopping-cart"></i> Add To Cart </button>
+                                <button type="submit" style="background-color: deeppink; margin-top: -10px; margin-left: 0px; " class="pull-right"><i class="fa fa-shopping-cart"></i> Add To Cart </button>
                                 <li style="list-style: none; " ><a href="{{url('/order_now/'.$productById->id)}}" style=" background: deeppink; color: white; padding: 10px;">Order Now</a></li>
                             </form>
                         </div>
@@ -52,7 +53,7 @@
             </div>
         </div>
     </section>
-    <section style="padding-top: 20px; background-color: white;">
+    <section style="padding-top: 20px; background-color: white;" id="reviews">
         <div class="container" style="padding: 0px;">
             <div class="row">
                 <div class="col-sm-12">
@@ -66,10 +67,27 @@
                         </ul>
                         <div class="tab-content" style="border-top: 1px solid deeppink; padding: 10px;">
                             <div id="review" class="tab-pane fade in active">
-                                <h3>Review Content Goes here. Review Content Goes here.</h3>
-                                <h3>Review Content Goes here. Review Content Goes here.</h3>
-                                <p>Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content.</p>
-                                <p>Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content. Some content.</p>
+                                <div class="media">
+
+                                    <div style="float: left;" class="media-left">
+                                        <img src="{{asset('front')}}/img/img_avatar1.png" class="media-object" style="width:60px">
+                                    </div>
+                                    <div style="float: left; padding-bottom: 20px; margin-left: 10px;" class="media-body">
+                                        <h4 class="media-heading">John Doe</h4>
+                                        <p>hjbkhjbkhj</p>
+                                    </div>
+
+                                </div>
+                                @if($customerId = Session::get('customerId'))
+                                    <form action="{{url('/add-review')}}" method="POST">
+                                        {{ csrf_field() }}
+                                        <h4>Review This Product:</h4>
+                                        <input type="hidden"  required name="product_id" value="{{ $productById->id }}">
+                                        <input type="hidden"  required name="customer_id" value="{{ $customerId }}">
+                                        <textarea name="review_product" class="form-control"></textarea>
+                                        <input type="submit" name="btn" value="Review">
+                                    </form>
+                                @endif
                             </div>
                             <div id="conditions" class="tab-pane fade">
                                 <h3>Conditions Content goes here. Conditions Content goes here.</h3>

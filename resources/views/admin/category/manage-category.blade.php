@@ -30,7 +30,7 @@ Manage Category
                                 <th>Category Name</th>
                                 <th>Category Description</th>
                                 <th>Publication Status</th>
-                                {{--<th>Action</th>--}}
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -39,7 +39,12 @@ Manage Category
                                 <td>{{$category->category_name}}</td>
                                 <td>{{$category->category_description}}</td>
                                 <td>{{$category->publication_status==1?'Published':'Unpublished'}}</td>
-                                {{--<td class="center">--}}
+                                <td class="text-center">
+                                    <a href="{{url('/edit-category/'.$category->id)}}" class="btn btn-success btn-xs">
+                                        <span class="glyphicon glyphicon-edit" title="Edit"></span>
+                                    </a>
+                                </td>
+                            {{--<td class="center">--}}
                                     {{--@if($category->publication_status==1)--}}
                                    {{--<a href="{{url('/unpublished-category/'.$category->id)}}" class="btn btn-primary btn-xs">--}}
                                        {{--<span class="glyphicon glyphicon-arrow-down" title="Unpublished"></span>--}}

@@ -21,6 +21,7 @@ Route::get('/product-details/{id}', 'PonnobaharController@productDetails');
 
 
 Route::post('/add-to-cart', 'CartController@addToCart');
+Route::get('/direct-add-to-cart/{id}', 'CartController@directAddToCart');
 Route::get('/show-cart', 'CartController@showCart');
 Route::post('/update-cart-product/{id}', 'CartController@updateCartProduct');
 //Route::get('/update-cart-product/{productQuantity}/{rowId}', 'CartController@ajaxUpdateCartProduct');
@@ -34,6 +35,12 @@ Route::post('/new-shipping', 'CheckoutController@saveShippingInfo');
 Route::get('/payment-info', 'CheckoutController@showPaymentInfo');
 Route::post('/new-order', 'CheckoutController@newOrderInfo');
 Route::get('/complete-order', 'CheckoutController@completeOrderInfo');
+
+/*Review*/
+Route::post('/add-review', 'ReviewController@addReview');
+Route::get('/view-review', 'ReviewController@viewReview');
+Route::get('/unpublished-review/{id}', 'ReviewController@unpublishedReview');
+/*Review*/
 
 
 

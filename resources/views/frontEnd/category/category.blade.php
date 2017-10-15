@@ -110,7 +110,7 @@
                                 <hr style="background-color: deeppink; margin-top: -8px;"/>
                             </div>
                             <div class="col-sm-6" style="padding: 0px;">
-                                <a href="" class="btn btn-default btn-block cat-display" style="border-radius: 0px; background-color: deeppink; color: white;">Add To Cart</a>
+                                <a href="{{url('/direct-add-to-cart/'.$categoryProduct->id)}} " class="btn btn-default btn-block cat-display" style="border-radius: 0px; background-color: deeppink; color: white;">Add To Cart</a>
                             </div>
                             <div class="col-sm-6" style=" padding: 0px;">
                                 <a href="{{ url('/product-details/'.$categoryProduct->id) }}" class="btn btn-default btn-block cat-display" style="border-radius: 0px; background-color: deeppink; color: white;">Details..</a>

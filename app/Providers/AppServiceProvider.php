@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
         //schema::defaultStringLength(191);
         View::composer('frontEnd.include.menu', function ($view) {
             /* Health & Beauty (hab) menu Item start */
@@ -104,6 +105,21 @@ class AppServiceProvider extends ServiceProvider
             $view->with('foiFourthSixSubCategories',
                 DB::table('sub_categories')->where('category_id', 8)->skip(18)->take(6)->get());
             /* Food Item  (foi menu Item end */
+
+
+            /* menu category */
+            $view->with('healthAndBeauty', DB::table('categories')->where('id',1)->first());
+            $view->with('clothing', DB::table('categories')->where('id',2)->first());
+            $view->with('footwear', DB::table('categories')->where('id',3)->first());
+            $view->with('jewelry', DB::table('categories')->where('id',4)->first());
+            $view->with('lifestyle', DB::table('categories')->where('id',5)->first());
+            $view->with('islamic', DB::table('categories')->where('id',6)->first());
+            $view->with('giftItem', DB::table('categories')->where('id',7)->first());
+            $view->with('footItem', DB::table('categories')->where('id',8)->first());
+            /* menu category */
+
+
+
         });
     }
 

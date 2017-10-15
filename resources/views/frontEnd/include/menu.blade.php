@@ -17,7 +17,7 @@
                 <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
                     <li class="dropdown megamenu-fw"> <a href="{{ url('/') }}">Home</a></li>
                     <li class="dropdown megamenu-fw">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Health And Beauty</a>
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown">{{$healthAndBeauty->category_name}}</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
@@ -66,7 +66,7 @@
                         </ul>
                     </li>
                     <li class="dropdown megamenu-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clothing</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{$clothing->category_name}}</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
@@ -115,7 +115,7 @@
                         </ul>
                     </li>
                     <li class="dropdown megamenu-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Footwear</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{$footwear->category_name}}</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
@@ -164,7 +164,7 @@
                         </ul>
                     </li>
                     <li class="dropdown megamenu-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jewelry</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{$jewelry->category_name}}</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
@@ -214,7 +214,7 @@
                     </li>
 
                     <li class="dropdown megamenu-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Life Style</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{$lifestyle->category_name}}</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
@@ -263,7 +263,7 @@
                         </ul>
                     </li>
                     <li class="dropdown megamenu-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Islamic Items</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{$islamic->category_name}}</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
@@ -312,7 +312,7 @@
                         </ul>
                     </li>
                     <li class="dropdown megamenu-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gift Items</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{$giftItem->category_name}}</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
@@ -361,7 +361,7 @@
                         </ul>
                     </li>
                     <li class="dropdown megamenu-fw">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Foot Items</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{$footItem->category_name}}</a>
                         <ul class="dropdown-menu megamenu-content" role="menu">
                             <li>
                                 <div class="row">
