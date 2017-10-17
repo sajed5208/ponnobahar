@@ -28,17 +28,6 @@ class PonnobaharController extends Controller
         $topRightOnes=DB::table('products')->where('top_right_one',1)->orderBy('id','desc')->get();
         $topRightTwos=DB::table('products')->where('top_right_two',1)->orderBy('id','desc')->get();
 
-        /*Menu*/
-        $healthAndBeautyById=DB::table('categories')->where('id',1)->first();
-        $clothingById=DB::table('categories')->where('id',2)->first();
-        $footwearById=DB::table('categories')->where('id',3)->first();
-        $jewelryById=DB::table('categories')->where('id',4)->first();
-        $lifestyleById=DB::table('categories')->where('id',5)->first();
-        $islamicById=DB::table('categories')->where('id',6)->first();
-        $giftItemById=DB::table('categories')->where('id',7)->first();
-        $footItemById=DB::table('categories')->where('id',8)->first();
-        /*Menu*/
-
         return view('frontEnd.home.home', [
                 'publishedSliders'=>$publishedSliders,
                 'carouselSliderProducts'=>$carouselSliderProducts,

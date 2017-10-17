@@ -53,7 +53,7 @@
                         </div><!-- /.box-body -->
                         <div class="box-footer">
                             <button type="reset" class="btn btn-default">Reset</button>
-                            <button type="submit" class="btn btn-info pull-right" onclick="return validate();">Create Category Info</button>
+                            <button type="submit" class="btn btn-info pull-right" onclick="return validate();">Create Size Width Info</button>
                         </div><!-- /.box-footer -->
                     </form>
                 </div>
