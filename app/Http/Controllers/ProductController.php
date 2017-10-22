@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Brand;
 use App\Product;
+use App\SizeWidth;
 use DB;
 
 class ProductController extends Controller
@@ -16,10 +17,13 @@ class ProductController extends Controller
         $categories=Category::where('publication_status',1)->get();
         $subCategories=SubCategory::where('publication_status',1)->get();
         $brands=Brand::where('publication_status',1)->get();
+        $sizeWidths=SizeWidth::where('publication_status',1)->get();
+//        return $sizeWidths;
         return view('/admin.product.add-product',[
             'categories'=>$categories,
             'subCategories'=>$subCategories,
-            'brands'=>$brands
+            'brands'=>$brands,
+            'sizeWidths'=>$sizeWidths
         ]);
     }
 

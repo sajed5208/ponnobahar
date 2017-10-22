@@ -120,6 +120,17 @@ class OrderController extends Controller
 
 
     public function saveOrder(Request$request){
+        $this->validate($request,array(
+            'billing_name'=>'required',
+            'billing_email'=>'required',
+            'billing_mobile'=>'required',
+            'billing_address'=>'required',
+            'sipping_name'=>'required',
+            'sipping_email'=>'required',
+            'sipping_mobile'=>'required',
+            'sipping_address'=>'required',
+            'payment_method'=>'required',
+        ));
        $nowOrder=new NowOrder();
        $nowOrder->product_id=$request->product_id;
        $nowOrder->product_name=$request->product_name;

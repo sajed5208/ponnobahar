@@ -30,12 +30,22 @@
                                 <label for="inputEmail3"  class="col-sm-2 control-label">Category Name</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="category_name" class="form-control" id="inputEmail3" placeholder="Category Name">
+                                    @if($errors->has('category_name'))
+                                        <span style="color: deeppink;">
+                                                {{$errors->first('category_name')}}
+                                                 </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Category Description</label>
                                 <div class="col-sm-10">
                                     <textarea name="category_description" class="form-control"></textarea>
+                                    @if($errors->has('category_description'))
+                                        <span style="color: deeppink;">
+                                                {{$errors->first('category_description')}}
+                                                 </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group">

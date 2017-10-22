@@ -26,13 +26,18 @@
                                     <div class="form-group">
                                         <label class="control-label col-md-4">First Name  <span class="text-danger">*</span></label>
                                         <div class="col-md-8">
-                                            <input type="text"  name="first_name" class="form-control" placeholder="First Name">
+                                            <input type="text"  name="first_name" data-toggle="tooltip" title="Please Your First Name !" onclick="validate();" class="form-control" placeholder="First Name">
                                             @if($errors->has('first_name'))
                                                 <span style="color: deeppink;">
                                                 {{$errors->first('first_name')}}
                                             </span>
                                             @endif
                                         </div>
+                                        <script>
+                                            $(document).ready(function validate(){
+                                                $('[data-toggle="tooltip"]').tooltip();
+                                            });
+                                        </script>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-4">Last Name <span class="text-danger">*</span></label>
@@ -237,6 +242,4 @@
             xmlHttp.send(null);
         }
     </script>
-
-
 @endsection

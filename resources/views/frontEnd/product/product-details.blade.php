@@ -136,7 +136,7 @@
                             else if ($categoryProduct->product_sku==0){echo 'Sold Out';}?></a>
                     </div>
                     <div class="col-sm-6 category-product-item text-right" style="">
-                        <a href="" class="cat-display" style="color: deeppink;">Add To Wishlist</a>
+                        <a href="{{url('/add-wishlist/'.$categoryProduct->id,$categoryProduct->category_id)}}" class="cat-display" style="color: deeppink;">Add To Wishlist</a>
                     </div>
 
                     <a href="{{ url('/product-details/'.$categoryProduct->id) }}"><img src="{{ asset($categoryProduct->product_image) }}" alt="" style="padding: 0px; margin-top: -10px; border-radius: 5px;" class="img-responsive cate-img"></a>

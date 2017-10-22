@@ -29,12 +29,22 @@
                                 <label for="inputEmail3"  class="col-sm-2 control-label">Brand Name</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="brand_name" class="form-control" id="inputEmail3" placeholder="Brand Name">
+                                    @if($errors->has('brand_name'))
+                                        <span style="color: deeppink;">
+                                                {{$errors->first('brand_name')}}
+                                                 </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Brand Description</label>
                                 <div class="col-sm-10">
                                     <textarea name="brand_description" class="form-control"></textarea>
+                                    @if($errors->has('brand_description'))
+                                        <span style="color: deeppink;">
+                                                {{$errors->first('brand_description')}}
+                                                 </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group">

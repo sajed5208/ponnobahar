@@ -35,6 +35,11 @@
                                         <label class="control-label col-md-4">Name <span class="text-danger"></span></label>
                                         <div class="col-md-8">
                                             <input type="text"  name="billing_name" class="form-control" placeholder="Name">
+                                            @if($errors->has('billing_name'))
+                                                <span style="color: deeppink;">
+                                           {{$errors->first('billing_name')}}
+                                        </span>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -42,18 +47,33 @@
                                         <div class="col-md-8">
                                             <input type="email"  id="emailAddress" name="billing_email" class="form-control" onblur="customerEmailCheck(this.value); " placeholder="Email">
                                             <span id="res" class="text-danger"></span>
+                                            @if($errors->has('billing_email'))
+                                                <span style="color: deeppink;">
+                                           {{$errors->first('billing_email')}}
+                                        </span>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-4">Mobile<span class="text-danger"></span></label>
                                         <div class="col-md-8">
                                             <input type="number"  name="billing_mobile" class="form-control" placeholder="Mobile Number">
+                                            @if($errors->has('billing_mobile'))
+                                                <span style="color: deeppink;">
+                                           {{$errors->first('billing_mobile')}}
+                                        </span>
+                                            @endif
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-4">Address</label>
                                         <div class="col-md-8">
                                             <textarea name="billing_address" class="form-control" style="resize: vertical;" rows="5"></textarea>
+                                            @if($errors->has('billing_address'))
+                                                <span style="color: deeppink;">
+                                           {{$errors->first('billing_address')}}
+                                        </span>
+                                            @endif
                                         </div>
                                     </div>
                                         <h4 class=" text-center" style="">Sipping Info</h4>
@@ -62,6 +82,11 @@
                                             <label class="control-label col-md-4">Name <span class="text-danger"></span></label>
                                             <div class="col-md-8">
                                                 <input type="text"  name="sipping_name" class="form-control" placeholder="Name">
+                                                @if($errors->has('sipping_name'))
+                                                    <span style="color: deeppink;">
+                                           {{$errors->first('sipping_name')}}
+                                        </span>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -69,18 +94,33 @@
                                             <div class="col-md-8">
                                                 <input type="email"  id="emailAddress" name="sipping_email" class="form-control" onblur="customerEmailCheck(this.value); " placeholder="Email">
                                                 <span id="res" class="text-danger"></span>
+                                                @if($errors->has('sipping_email'))
+                                                    <span style="color: deeppink;">
+                                           {{$errors->first('sipping_email')}}
+                                        </span>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-4">Mobile<span class="text-danger"></span></label>
                                             <div class="col-md-8">
                                                 <input type="number"  name="sipping_mobile" class="form-control" placeholder="Mobile Number">
+                                                @if($errors->has('sipping_mobile'))
+                                                    <span style="color: deeppink;">
+                                           {{$errors->first('sipping_mobile')}}
+                                        </span>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-4">Address</label>
                                             <div class="col-md-8">
                                                 <textarea name="sipping_address" class="form-control" style="resize: vertical;" rows="5"></textarea>
+                                                @if($errors->has('sipping_address'))
+                                                    <span style="color: deeppink;">
+                                           {{$errors->first('sipping_address')}}
+                                        </span>
+                                                @endif
                                             </div>
                                         </div>
                                         <h4 class=" text-center" style="">Payment Info</h4>
@@ -95,6 +135,11 @@
                                                 <input type="radio" name="payment_method" value="Cash"> Payza<br>
                                                 <input type="radio" name="payment_method" value="Payza"> Credit Card<br>
                                                 <input type="radio" name="payment_method" value="American Express"> American Express<br>
+                                                @if($errors->has('payment_method'))
+                                                    <span style="color: deeppink;">
+                                           {{$errors->first('payment_method')}}
+                                        </span>
+                                                @endif
                                             </div>
                                         </div>
                                     <div class="form-group">

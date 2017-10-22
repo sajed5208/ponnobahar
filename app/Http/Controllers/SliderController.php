@@ -37,6 +37,13 @@ class SliderController extends Controller
     }
 
     public function saveImageSlider(Request $request) {
+        $this->validate($request,array(
+            'category_id'=>'required',
+            'sub_category_id'=>'required',
+            'slider_main_image'=>'required',
+            'slider_sub_image'=>'required',
+        ));
+
         $imageUrl1 = $this->saveImage1($request);
         $imageUrl2 = $this->saveImage2($request);
 

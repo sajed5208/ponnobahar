@@ -13,6 +13,12 @@ class SubCategoryController extends Controller
         return view('admin.sub-category.add-sub-category', ['allCategories'=>$allCategories]);
     }
     public function saveSubCategory(Request $request) {
+        $this->validate($request,array(
+            'category_id'=>'required',
+            'sub_category_name'=>'required',
+            'sub_category_description'=>'required',
+            'publication_status'=>'required',
+        ));
         $subCategory= new SubCategory();
         $subCategory->category_id = $request->category_id;
         $subCategory->sub_category_name = $request->sub_category_name;

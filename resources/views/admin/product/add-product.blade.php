@@ -64,7 +64,11 @@
                                     <div class="form-group">
                                         <label for="inputEmail3" class="col-sm-4 control-label">Product Size/Weight</label>
                                         <div class="col-sm-8">
-                                            <input type="text" name="product_size_weight" class="form-control" id="inputEmail3" placeholder="Product Size or Weight">
+                                            <select name="brand_id" class="form-control" multiple="multiple">
+                                                @foreach($sizeWidths as $sizeWidth)
+                                                    <option value="{{$sizeWidth->id}}">{{$sizeWidth->size_width_name}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                 </div>

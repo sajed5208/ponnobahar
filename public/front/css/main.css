@@ -60,6 +60,7 @@ img,
 svg,
 video {
     vertical-align: middle;
+    padding: 7px;
 }
 .image-hover:hover{
     border-radius: 15px;

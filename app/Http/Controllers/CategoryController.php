@@ -16,6 +16,11 @@ class CategoryController extends Controller
         return view('admin.category.add-category');
     }
     public function newCategory(Request$request){
+        $this->validate($request, array(
+            'category_name'=>'required',
+            'category_description'=>'required',
+            'publication_status'=>'required'
+        ));
         Category::create($request->all());
         return redirect('/add-category')->with('message','Category Info Save Successfully');
     }

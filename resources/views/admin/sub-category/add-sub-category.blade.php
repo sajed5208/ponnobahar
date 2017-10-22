@@ -48,12 +48,22 @@
                                 <label for="inputEmail3"  class="col-sm-2 control-label">Sub Category Name</label>
                                 <div class="col-sm-10">
                                     <input type="text" name="sub_category_name" class="form-control" id="inputEmail3" placeholder="Sub Category Name">
+                                    @if($errors->has('sub_category_name'))
+                                        <span style="color: deeppink;">
+                                                {{$errors->first('sub_category_name')}}
+                                                 </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Sub Category Description</label>
                                 <div class="col-sm-10">
                                     <textarea name="sub_category_description" class="form-control"></textarea>
+                                    @if($errors->has('sub_category_description'))
+                                        <span style="color: deeppink;">
+                                                {{$errors->first('sub_category_description')}}
+                                                 </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group">

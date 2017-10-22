@@ -17,8 +17,17 @@ class BrandController extends Controller
 
     public function newBrand(Request $request)
     {
-        Brand::create($request->all());
-
+        $this->validate($request, array(
+            'brand_name'=>'required',
+            'brand_description'=>'required',
+            'publication_status'=>'required'
+        ));
+        $band=new Brand();
+        $band->brand_name=$request->brand_name;
+        $band->brand_description=$request->brand_description;
+        $band->publication_status=$request->publication_status;
+        $band->save();
+//        Brand::create($request->all());
         return redirect('/add-brand')->with('message', 'Brand Info Save Successfully');
     }
 

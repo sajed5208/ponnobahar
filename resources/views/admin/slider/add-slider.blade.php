@@ -36,6 +36,11 @@
                                             <option value="{{$category->id}}">{{$category->category_name}}</option>
                                         @endforeach
                                     </select>
+                                    @if($errors->has('category_id'))
+                                        <span style="color: deeppink;">
+                                                {{$errors->first('category_id')}}
+                                            </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group" id="sliderSubRes">
@@ -46,20 +51,35 @@
                                             <option value="{{$subCategory->id}}">{{$subCategory->sub_category_name}}</option>
                                         @endforeach
                                     </select>
+                                    @if($errors->has('sub_category_id'))
+                                        <span style="color: deeppink;">
+                                                {{$errors->first('sub_category_id')}}
+                                            </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Slider Main Image</label>
                                 <div class="col-sm-10">
-                                    <input name="slider_main_image" type="file" required accept="image/*">
+                                    <input name="slider_main_image" type="file"  accept="image/*">
                                     <span class="text-danger">image height = 480px and width = 720px</span>
+                                    @if($errors->has('slider_main_image'))
+                                        <span style="color: deeppink;">
+                                                {{$errors->first('slider_main_image')}}
+                                            </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="inputEmail3" class="col-sm-2 control-label">Slider Sub Image</label>
                                 <div class="col-sm-10">
-                                    <input name="slider_sub_image" type="file" required accept="image/*">
+                                    <input name="slider_sub_image" type="file"  accept="image/*">
                                     <span class="text-danger">image height = 66px and width = 99px</span>
+                                    @if($errors->has('slider_sub_image'))
+                                        <span style="color: deeppink;">
+                                                {{$errors->first('slider_sub_image')}}
+                                            </span>
+                                    @endif
                                 </div>
                             </div>
                             <div class="form-group">
