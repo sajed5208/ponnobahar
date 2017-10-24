@@ -23,8 +23,17 @@ class CustomerController extends Controller
         return redirect('/manage-customer')->with('message', 'Customer info delete successfully');
     }
     public function customerHome(){
+        $topLeftOnes=DB::table('products')->where('top_left_one',1)->orderBy('id','desc')->get();
+        $topLeftTwos=DB::table('products')->where('top_left_two',1)->orderBy('id','desc')->get();
+        $topRightOnes=DB::table('products')->where('top_right_one',1)->orderBy('id','desc')->get();
+        $topRightTwos=DB::table('products')->where('top_right_two',1)->orderBy('id','desc')->get();
 
-        return view('frontEnd.customer.customer-home');
+        return view('frontEnd.customer.customer-home',[
+            'topLeftOnes'=>$topLeftOnes,
+            'topLeftTwos'=>$topLeftTwos,
+            'topRightOnes'=>$topRightOnes,
+            'topRightTwos'=>$topRightTwos
+        ]);
     }
     public function customerOrder(){
         $customerId=Session::get('customerId');

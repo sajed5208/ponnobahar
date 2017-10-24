@@ -1,5 +1,4 @@
 @extends('frontEnd.master')
-
 @section('body')
 <section class="slider-section" style="background-color: white;">
     <div class="container">
@@ -102,7 +101,7 @@
                 <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1140px;height:200px;overflow:hidden;">
                     @foreach($carouselSliderProducts as $carouselSliderProduct)
                     <div class="item">
-                        <a href="{{url('/brand-product-view/'.$carouselSliderProduct->brand_id)}}"><img src="{{ asset($carouselSliderProduct->product_image) }}" /></a>
+                        <a href="{{url('/brand-product-view/'.$carouselSliderProduct->brand_id)}}"><img class="image-hover" src="{{ asset($carouselSliderProduct->product_image) }}" /></a>
                     </div>
                     @endforeach
                     <a data-u="any" href="https://www.jssor.com" style="display:none">image gallery</a>
